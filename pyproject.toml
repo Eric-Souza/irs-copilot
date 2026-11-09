@@ -1,0 +1,39 @@
+[project]
+name = "irs-copilot"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "chromadb>=1.5.9",
+    "httpx>=0.28.1",
+    "llama-index-core>=0.14.25",
+    "llama-index-embeddings-huggingface>=0.8.0",
+    "llama-index-llms-google-genai>=0.11.3",
+    "llama-index-vector-stores-chroma>=0.6.0",
+    "llama-index-vector-stores-pinecone>=0.9.0",
+    "openinference-instrumentation-llama-index>=4.7.2",
+    "opentelemetry-exporter-otlp-proto-http>=1.45.2",
+    "python-dotenv>=1.2.4",
+    "torch>=2.15",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "pytest-cov>=7.1.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.uv]
+link-mode = "copy"
+
+# PyPI's Linux torch brings the CUDA libraries, gigabytes CI doesn't need; the embeddings run on CPU
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true

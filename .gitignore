@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+storage/
+.coverage
+data/p17.pdf
