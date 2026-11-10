@@ -67,6 +67,14 @@ def test_answers_straight_from_the_retrieved_sections():
     assert "(links to sections 3.17)" in model.seen[0][1].content
 
 
+def test_titled_links_name_the_section_they_go_to():
+    model = Model([("read_section", {"section": "3.14"})], "Four tests [3.14].")
+    agent.Agent(search=Search(), llm=model, sections=SECTIONS, titled_links=True).ask("can my mom be my dependent?")
+    assert "(links to sections 3.17 Gross Income Test)" in model.seen[0][1].content
+    # And so does a section read with the tool
+    assert "(links to sections 3.17 Gross Income Test)" in model.seen[1][-1].content
+
+
 def test_reading_a_linked_section_makes_it_citable():
     bot, _ = make(Model([("read_section", {"section": "3.17"})], "Under $5,200 [3.17], four tests [3.14]."))
     a = bot.ask("how much can she earn?")

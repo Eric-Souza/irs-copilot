@@ -28,12 +28,14 @@ def systems() -> dict:
         "rag-chunks": lambda: rag.RAG("chunks"),
         "rag-sections": lambda: rag.RAG("sections"),
         "agent": lambda: agent.Agent("sections").ask,
+        "agent-links": lambda: agent.Agent("sections", titled_links=True).ask,
     }
 
 
 def version(name: str) -> str:
     """Changes when what the model is given does, so the cache doesn't serve stale answers"""
     given = [answer.LLM_MODEL, index.EMBED_MODEL] + ([answer.SYSTEM, rag.K] if name.startswith("rag") else [agent.INSTRUCTIONS, agent.K, agent.MAX_TOOL_CALLS])
+    given += ["titled links"] if name == "agent-links" else []
     return hashlib.sha1(repr(given).encode()).hexdigest()[:10]
 
 

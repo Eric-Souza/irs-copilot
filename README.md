@@ -47,7 +47,7 @@ Some topics Pub 17 used to cover in full are now only pointers to other publicat
 
 ## Eval
 
-`python -m evals.run` asks each golden question to three systems and scores the answers in code. It checks whether the answer states the fact, cites a labeled section, and refuses only when it should. Answers are cached per system and per prompt version, so rescoring costs no quota.
+`python -m evals.run` asks each golden question to three systems, plus the `agent-links` experiment below, and scores the answers in code. It checks whether the answer states the fact, cites a labeled section, and refuses only when it should. Answers are cached per system and per prompt version, so rescoring costs no quota.
 
 Results on the 80 questions with Gemini 3.5 Flash Lite (`evals/results/run.md`):
 
@@ -60,12 +60,28 @@ Results on the 80 questions with Gemini 3.5 Flash Lite (`evals/results/run.md`):
 What the answers say:
 
 - **The index still matters most.** Section nodes fix 13 of the chunk baseline's 18 misses and cut tokens by a quarter. Chunks have no headings, so the model often can't tell what a chunk is about and refuses: 11 of the chunk baseline's 18 misses are refusals of answerable questions, three of them the standard deduction.
-- **The agent gains more here than in irpf-copilot.** It's 7 points over RAG on sections, against none for the Brazilian manual, at about 60% more tokens. It called a tool on 15 of the 80 questions. It's right on 5 questions that RAG on sections gets wrong. On four of them (n06, c15, and the hard-hop items h03 and h07), a second search found what the first missed. The fifth, m10, took no tool call: the same retrieval with the agent's instructions.
-- **It never followed a link.** All 15 tool calls were `search_publication` with a reworded query, never `read_section`, even though Pub 17's links are exact. The reworded search found the hop section each time it mattered. On the two hard-hop misses, h02 and h06, the agent made no tool call at all. It answered from the first section and stopped.
+- **The agent gains more here than in irpf-copilot.** It's 7 points over RAG on sections, against none for the Brazilian manual, at about 60% more tokens. It called a tool on 15 of the 80 questions, 17 calls in all. It's right on 5 questions that RAG on sections gets wrong. On four of them (n06, c15, and the hard-hop items h03 and h07), a second search found what the first missed. The fifth, m10, took no tool call: the same retrieval with the agent's instructions.
+- **It never followed a link.** All 17 tool calls were `search_publication` with a reworded query, never `read_section`, even though Pub 17's links are exact. The reworded search found the hop section each time it mattered. On the two hard-hop misses, h02 and h06, the agent made no tool call at all. It answered from the first section and stopped.
 - **The remaining misses are retrieval and wording.** On c06 (a watch for years of service) and m01 (a mother as qualifying relative), the sections index doesn't retrieve the labeled section, and both systems on it refuse. The chunk index does retrieve it, and the chunk baseline gets m01 right. c17 is wording: the answer says to report tips "on the same line as your regular pay", and the fact expects "part of your pay".
 - **Out-of-scope refusals are right for both systems on sections.** The agent searched again on 8 of the 11 before refusing, so a refusal costs about two model calls.
 
 Six hard-hop items are too few to put a number on the agent's gain there. They show where it comes from.
+
+### Does the agent follow links when it can see where they go?
+
+The agent is shown each section's links as bare numbers: `(links to sections 14.7)`. In h02, 14.7 is *Credit for Other Dependents*, the section with the answer, and nothing in "14.7" says so. `agent-links` (`Agent(titled_links=True)`) shows the title instead: `(links to sections 14.7 Credit for Other Dependents (ODC))`, or the chapter's name for a link to a chapter. Nothing else changes. To see how much a run varies on its own, the unchanged agent was also run a second time:
+
+| Run | Right, of 80 | Questions with a tool call | `read_section` calls | Tokens |
+|---|---|---|---|---|
+| agent | 74 | 15 | 0 | 3,491 |
+| agent, run again | 74 | 16 | 0 | 3,611 |
+| agent-links | 77 | 20 | 1 | 3,946 |
+
+- **Titles didn't make it follow links.** It read one section in 80 questions: 14.7 for h02, the right one. Its answer then named the Credit for Other Dependents but still left out the $500.
+- **The gain of 3 is within the noise.** Gemini isn't deterministic at temperature 0: the two unchanged runs gave the same score, but only 27 of 80 answers word for word, and 2 questions flipped. agent-links won its 3 extra questions (c17, m01, o11) through more searches, not links.
+- **So this model searches.** Given a reworded search and a link to follow, Gemini 3.5 Flash Lite picks the search, whether or not it can tell where the link goes. Making it follow links would take more than a better hint, for example reading the linked sections in code before the model answers, which costs context on every question.
+
+`python -m evals.run --only agent-links` reruns it, and its report is `evals/results/run-agent-links.md`.
 
 Retrieval alone (`python -m evals.retrieval`, top 5 on the 69 answerable questions):
 
@@ -93,7 +109,7 @@ With `PHOENIX_COLLECTOR_ENDPOINT` set (`http://localhost:6006` for a local `phoe
 
 Eval questions are tagged with the system, the golden id and the kind.
 
-`python -m evals.phoenix` uploads the golden set as a dataset and logs each system's cached answers as an experiment. The scoring is the same code as the eval: fact, refusal, citations and tool calls. You can compare the three systems question by question without a model call.
+`python -m evals.phoenix` uploads the golden set as a dataset and logs each system's cached answers as an experiment. The scoring is the same code as the eval: fact, refusal, citations and tool calls. You can compare the systems question by question without a model call.
 
 ## Stack
 
@@ -143,7 +159,7 @@ The eval and tracing:
 
 ```bash
 uv run python -m evals.retrieval              # no model calls
-uv run python -m evals.run                    # 80 questions x 3 systems, cached in storage/answers
+uv run python -m evals.run                    # 80 questions x 4 systems, cached in storage/answers
 uvx --from arize-phoenix phoenix serve        # in another terminal
 PHOENIX_COLLECTOR_ENDPOINT=http://localhost:6006 uv run python -m tax.agent "..."
 uv run python -m evals.phoenix                # cached answers as experiments

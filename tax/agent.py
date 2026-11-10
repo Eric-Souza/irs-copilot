@@ -64,18 +64,30 @@ class Act(Event):
 
 
 class Agent(Workflow):
-    def __init__(self, corpus: str = "sections", search=None, llm=None, sections=None, **kwargs):
+    # titled_links shows each link with its section's title ("3.9 Age Test", not only "3.9"): the
+    # experiment of whether the model follows links when it can tell where they go
+    def __init__(self, corpus: str = "sections", search=None, llm=None, sections=None, titled_links: bool = False, **kwargs):
         super().__init__(timeout=180, **kwargs)
         self.search = search or index.Search(corpus, K)
         self.llm = llm or answer.llm()
         self.sections = sections or pub17.load()
+        self.titled_links = titled_links
+
+    def links(self, see: list[str]) -> str:
+        if not see:
+            return ""
+        if not self.titled_links:
+            return f"\n(links to sections {', '.join(see)})"
+        # A link to a chapter goes to its first section, titled Introduction: name the chapter instead
+        title = lambda s: f"Chapter {s.chapter}. {s.chapter_title}" if s.title == "Introduction" else s.title
+        return "\n(links to sections " + "; ".join(f"{id} {title(self.sections[id])}" for id in see) + ")"
 
     def context(self, nodes) -> str:
         """The retrieved nodes, each followed by the sections it links to"""
         parts = []
         for r in nodes:
             see = [s for id in index.sections(r) if id in self.sections for s in self.sections[id].see]
-            parts.append(answer.context([r]) + (f"\n(links to sections {', '.join(dict.fromkeys(see))})" if see else ""))
+            parts.append(answer.context([r]) + self.links(list(dict.fromkeys(see))))
         return "\n\n".join(parts)
 
     @step
@@ -128,8 +140,7 @@ class Agent(Workflow):
             s = self.sections[id]
             run.seen.append(s.id)
             text = s.text if len(s.text) <= MAX_READ_CHARS else s.text[:MAX_READ_CHARS] + " [...]"
-            see = f"\n(links to sections {', '.join(s.see)})" if s.see else ""
-            return f"--- section {s.id}: {s.heading} ---\n{text}{see}"
+            return f"--- section {s.id}: {s.heading} ---\n{text}{self.links(s.see)}"
         return f"Unknown tool: {call.tool_name}"
 
     def ask(self, question: str) -> answer.Answer:

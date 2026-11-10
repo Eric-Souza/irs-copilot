@@ -82,5 +82,7 @@ Every run is traced to Phoenix and logged there as an experiment on the golden s
    | RAG over sections | 84% | 85% | 33% (2/6) | 100% | 9% | 1.00 | 2,196 |
    | Agent over sections | 91% | 92% | 67% (4/6) | 100% | 4% | 1.21 | 3,491 |
 
-   Unlike irpf-copilot, the agent gains 7 points over RAG on sections. Its 15 tool calls were all `search_publication`, never `read_section`: a reworded search found the hop section each time it mattered, and on the two hard-hop misses (h02, h06) it made no tool call. Nudging it to follow links is the obvious next experiment.
+   Unlike irpf-copilot, the agent gains 7 points over RAG on sections. Its 17 tool calls were all `search_publication`, never `read_section`: a reworded search found the hop section each time it mattered, and on the two hard-hop misses (h02, h06) it made no tool call.
+
+   Showing each link's title instead of its bare number (`agent-links`) brought one `read_section` in 80 questions and 77 right against 74. The unchanged agent run a second time also got 74, with only 27 answers word for word the same, so the gain is within the run-to-run noise. This model searches again rather than follow links.
 5. **Phoenix experiments, README, CI** (done): the three cached runs are logged in Phoenix as experiments on the `irs-golden` dataset, the README has the results, and CI runs the 129 tests. Medium article and LinkedIn project still to do.
