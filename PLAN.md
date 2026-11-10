@@ -74,5 +74,13 @@ Every run is traced to Phoenix and logged there as an experiment on the golden s
    | chunks | 64% | 91% | 0.75 | 77% | 50% | 10,949 chars |
 
    Pinecone gives the same scores at about 200 ms a query, against 3 ms for Chroma.
-4. **Agent and answer eval** (in progress). The first run used up the Gemini free tier's daily quota after 211 of 237 answers. The run resumes from the cache, which per system and prompt version keeps every answer whose retrieved context hasn't changed.
-5. **Phoenix experiments, README, CI.**
+4. **Agent and answer eval** (done). The first run used up the Gemini free tier's daily quota after 211 of 237 answers, and the rest ran the next day from the cache. On the 80 questions:
+
+   | System | Fact right | Multi-hop | Hard-hop | Refuses out of scope | Refuses in scope | Model calls | Tokens |
+   |---|---|---|---|---|---|---|---|
+   | RAG over chunks | 75% | 77% | 33% (2/6) | 91% | 16% | 1.00 | 3,012 |
+   | RAG over sections | 84% | 85% | 33% (2/6) | 100% | 9% | 1.00 | 2,196 |
+   | Agent over sections | 91% | 92% | 67% (4/6) | 100% | 4% | 1.21 | 3,491 |
+
+   Unlike irpf-copilot, the agent gains 7 points over RAG on sections. Its 15 tool calls were all `search_publication`, never `read_section`: a reworded search found the hop section each time it mattered, and on the two hard-hop misses (h02, h06) it made no tool call. Nudging it to follow links is the obvious next experiment.
+5. **Phoenix experiments, README, CI** (done): the three cached runs are logged in Phoenix as experiments on the `irs-golden` dataset, the README has the results, and CI runs the 129 tests. Medium article and LinkedIn project still to do.

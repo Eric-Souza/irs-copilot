@@ -2,11 +2,23 @@
 
 [![CI](https://github.com/Eric-Souza/irs-copilot/actions/workflows/ci.yml/badge.svg)](https://github.com/Eric-Souza/irs-copilot/actions/workflows/ci.yml)
 
-Ask a question about your 2025 U.S. federal income tax return and get an answer from **IRS Publication 17 (2025), Your Federal Income Tax**. The answer cites the publication's sections. An agent built on LlamaIndex Workflows follows the publication's own cross-references ("see *Qualifying Relative*, later") when one section isn't enough. When Pub 17 doesn't cover the question, it says so. A golden set of 80 questions measures what the agent adds over plain RAG and what it costs.
+Ask a question about your 2025 U.S. federal income tax return and get an answer from **IRS Publication 17 (2025), Your Federal Income Tax**. The answer cites the publication's sections. An agent built on LlamaIndex Workflows can search again or follow the publication's own cross-references ("see *Qualifying Relative*, later") when one section isn't enough. When Pub 17 doesn't cover the question, it says so. A golden set of 80 questions measures what the agent adds over plain RAG and what it costs.
 
 It is the U.S. counterpart of [IRPF Copilot](https://github.com/Eric-Souza/irpf-copilot), which does the same for the Brazilian return. The agent, eval, stores and tracing are the same; the corpus, parser and golden set are new.
 
-<!-- DEMO: agent example, filled in after the eval -->
+```
+$ uv run python -m tax.agent "My bank forgave part of my credit card debt and sent me a 1099-C. Is there any way I don't owe tax on it?"
+
+Yes. You have no income from the canceled debt if it's intended as a gift to you [8.3]. Additionally,
+you do not include a canceled debt in your gross income in the following situations:
+- The debt is canceled in a bankruptcy case under title 11 of the U.S. Code [8.4].
+- The debt is canceled when you're insolvent (though you can't exclude any amount of canceled debt
+  that is more than the amount by which you're insolvent) [8.4].
+
+tools: search_publication(canceled debt exceptions), cited: 8.3, 8.4, 2 model calls, 7,726 tokens
+```
+
+Section 8.4, Exceptions, wasn't in the top 5 for the question. The agent searched again and found it. RAG over sections answers the same question with the gift rule only and says Pub 17 covers nothing else.
 
 ## What it shows
 
@@ -37,7 +49,23 @@ Some topics Pub 17 used to cover in full are now only pointers to other publicat
 
 `python -m evals.run` asks each golden question to three systems and scores the answers in code. It checks whether the answer states the fact, cites a labeled section, and refuses only when it should. Answers are cached per system and per prompt version, so rescoring costs no quota.
 
-<!-- ANSWER TABLE: filled in after the eval -->
+Results on the 80 questions with Gemini 3.5 Flash Lite (`evals/results/run.md`):
+
+| System | Fact right | Multi-hop | Hard-hop | Cites a labeled section | Refuses out of scope | Refuses in scope | Model calls | Tool calls | Tokens |
+|---|---|---|---|---|---|---|---|---|---|
+| RAG over chunks | 75% | 77% | 33% (2/6) | 43% | 91% | 16% | 1.00 | 0.00 | 3,012 |
+| RAG over sections | 84% | 85% | 33% (2/6) | 91% | 100% | 9% | 1.00 | 0.00 | 2,196 |
+| Agent over sections | 91% | 92% | 67% (4/6) | 94% | 100% | 4% | 1.21 | 0.21 | 3,491 |
+
+What the answers say:
+
+- **The index still matters most.** Section nodes fix 13 of the chunk baseline's 18 misses and cut tokens by a quarter. Chunks have no headings, so the model often can't tell what a chunk is about and refuses: 11 of the chunk baseline's 18 misses are refusals of answerable questions, three of them the standard deduction.
+- **The agent gains more here than in irpf-copilot.** It's 7 points over RAG on sections, against none for the Brazilian manual, at about 60% more tokens. It called a tool on 15 of the 80 questions. It's right on 5 questions that RAG on sections gets wrong. On four of them (n06, c15, and the hard-hop items h03 and h07), a second search found what the first missed. The fifth, m10, took no tool call: the same retrieval with the agent's instructions.
+- **It never followed a link.** All 15 tool calls were `search_publication` with a reworded query, never `read_section`, even though Pub 17's links are exact. The reworded search found the hop section each time it mattered. On the two hard-hop misses, h02 and h06, the agent made no tool call at all. It answered from the first section and stopped.
+- **The remaining misses are retrieval and wording.** On c06 (a watch for years of service) and m01 (a mother as qualifying relative), the sections index doesn't retrieve the labeled section, and both systems on it refuse. The chunk index does retrieve it, and the chunk baseline gets m01 right. c17 is wording: the answer says to report tips "on the same line as your regular pay", and the fact expects "part of your pay".
+- **Out-of-scope refusals are right for both systems on sections.** The agent searched again on 8 of the 11 before refusing, so a refusal costs about two model calls.
+
+Six hard-hop items are too few to put a number on the agent's gain there. They show where it comes from.
 
 Retrieval alone (`python -m evals.retrieval`, top 5 on the 69 answerable questions):
 

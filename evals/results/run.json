@@ -1,0 +1,6457 @@
+{
+ "summary": {
+  "rag-chunks": {
+   "fact": 0.7536231884057971,
+   "fact_by_kind": {
+    "number": 0.7368421052631579,
+    "direct": 0.8181818181818182,
+    "colloquial": 0.85,
+    "multi-hop": 0.7692307692307693,
+    "hard-hop": 0.3333333333333333
+   },
+   "cites_expected": 0.43478260869565216,
+   "dropped": 0,
+   "refused_out_of_scope": 0.9090909090909091,
+   "refused_in_scope": 0.15942028985507245,
+   "calls": 1,
+   "tool_calls": 0,
+   "tokens": 3012.4125,
+   "ms_median": 936.0
+  },
+  "rag-sections": {
+   "fact": 0.8405797101449275,
+   "fact_by_kind": {
+    "number": 0.8947368421052632,
+    "direct": 1.0,
+    "colloquial": 0.85,
+    "multi-hop": 0.8461538461538461,
+    "hard-hop": 0.3333333333333333
+   },
+   "cites_expected": 0.9130434782608695,
+   "dropped": 1,
+   "refused_out_of_scope": 1.0,
+   "refused_in_scope": 0.08695652173913043,
+   "calls": 1,
+   "tool_calls": 0,
+   "tokens": 2195.9125,
+   "ms_median": 904.5
+  },
+  "agent": {
+   "fact": 0.9130434782608695,
+   "fact_by_kind": {
+    "number": 0.9473684210526315,
+    "direct": 1.0,
+    "colloquial": 0.9,
+    "multi-hop": 0.9230769230769231,
+    "hard-hop": 0.6666666666666666
+   },
+   "cites_expected": 0.9420289855072463,
+   "dropped": 0,
+   "refused_out_of_scope": 1.0,
+   "refused_in_scope": 0.043478260869565216,
+   "calls": 1.2125,
+   "tool_calls": 0.2125,
+   "tokens": 3490.8125,
+   "ms_median": 1626.0
+  }
+ },
+ "results": {
+  "rag-chunks": [
+   {
+    "id": "n01",
+    "text": "For U.S. citizens and residents filing on a calendar year basis who request no extension, the due date is April 15, 2026, for most taxpayers, and June 15, 2026, for certain taxpayers outside the United States [1.19]. If you request an automatic extension, the due date is October 15, 2026 [1.19]. If you use a fiscal year, your return is due by the 15th day of the 4th month after the close of your fiscal year [1.19]. When a due date falls on a Saturday, Sunday, or legal holiday, it is delayed until the next business day [1.19].",
+    "cited": [
+     "1.19"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.19",
+     "4.24",
+     "4.25",
+     "4.50",
+     "4.26",
+     "4.27",
+     "4.28",
+     "4.39",
+     "4.40",
+     "4.41"
+    ],
+    "calls": 1,
+    "tokens": 3157,
+    "tools": [],
+    "ms": 1151,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n02",
+    "text": "If you get the automatic extension, you have until October 15, 2026, to file your 2025 return [1.19] [1.20].",
+    "cited": [
+     "1.19",
+     "1.20"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.19",
+     "4.24",
+     "4.25",
+     "1.22",
+     "1.23",
+     "1.20",
+     "1.21",
+     "4.50"
+    ],
+    "calls": 1,
+    "tokens": 3019,
+    "tools": [],
+    "ms": 707,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "n03",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "4.24",
+     "4.25",
+     "10.8",
+     "4.50",
+     "10.10",
+     "8.13"
+    ],
+    "calls": 1,
+    "tokens": 3105,
+    "tools": [],
+    "ms": 1224,
+    "kind": "number",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "n04",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "10.10",
+     "10.5",
+     "10.6",
+     "10.7",
+     "10.8",
+     "12.5",
+     "12.6",
+     "12.7",
+     "12.8",
+     "12.9",
+     "12.10",
+     "12.11",
+     "10.3",
+     "10.4",
+     "4.50"
+    ],
+    "calls": 1,
+    "tokens": 3065,
+    "tools": [],
+    "ms": 3809,
+    "kind": "number",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "n05",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "10.1",
+     "10.2",
+     "10.3",
+     "10.10",
+     "2.11",
+     "2.12",
+     "2.13",
+     "10.8",
+     "9.45"
+    ],
+    "calls": 1,
+    "tokens": 2974,
+    "tools": [],
+    "ms": 5809,
+    "kind": "number",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "n06",
+    "text": "For a single person who is 65 or older, the standard deduction is $17,750 (assuming they cannot be claimed as a dependent on another person's tax return). [10.10]",
+    "cited": [
+     "10.10"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "10.5",
+     "10.6",
+     "10.7",
+     "10.8",
+     "10.1",
+     "10.2",
+     "10.3",
+     "10.10"
+    ],
+    "calls": 1,
+    "tokens": 3113,
+    "tools": [],
+    "ms": 882,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n07",
+    "text": "For 2025, the most that can be contributed to your traditional IRA is generally the smaller of the following amounts:\n- $7,000 ($8,000 if you are 50 or older).\n- Your taxable compensation for the year. [9.6]",
+    "cited": [
+     "9.6"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.6",
+     "9.7",
+     "9.40",
+     "9.41",
+     "9.42",
+     "9.43",
+     "9.5",
+     "9.39",
+     "9.12",
+     "9.13",
+     "9.14"
+    ],
+    "calls": 1,
+    "tokens": 3009,
+    "tools": [],
+    "ms": 866,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n08",
+    "text": "For 2025, if you are 50 or older, your contribution limit for Roth IRAs is generally $8,000, subject to your taxable compensation and modified AGI reductions [9.39].",
+    "cited": [
+     "9.39"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.39",
+     "9.40",
+     "9.41",
+     "9.6",
+     "9.7",
+     "9.42",
+     "9.43",
+     "9.38"
+    ],
+    "calls": 1,
+    "tokens": 2932,
+    "tools": [],
+    "ms": 947,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n09",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "14.7",
+     "14.8",
+     "14.9",
+     "14.10",
+     "3.2",
+     "3.3",
+     "3.4",
+     "3.5",
+     "3.13",
+     "14.4",
+     "14.5"
+    ],
+    "calls": 1,
+    "tokens": 2906,
+    "tools": [],
+    "ms": 819,
+    "kind": "number",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "n10",
+    "text": "The maximum amount you can claim for the credit for other dependents is $500 for each qualifying dependent [14.7].",
+    "cited": [
+     "14.7"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "14.7",
+     "14.8",
+     "14.9",
+     "14.10",
+     "3.19",
+     "3.20",
+     "3.21",
+     "3.2",
+     "3.3",
+     "3.4",
+     "3.5",
+     "14.2",
+     "14.3",
+     "14.4",
+     "14.5",
+     "3.18"
+    ],
+    "calls": 1,
+    "tokens": 2988,
+    "tools": [],
+    "ms": 935,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n11",
+    "text": "The person's gross income for the year must be less than $5,200 [3.2].",
+    "cited": [
+     "3.2"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.14",
+     "3.15",
+     "4.24",
+     "4.25",
+     "3.2",
+     "10.3",
+     "10.4",
+     "10.5"
+    ],
+    "calls": 1,
+    "tokens": 3010,
+    "tools": [],
+    "ms": 854,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n12",
+    "text": "The deduction for state and local taxes is limited to $40,000 ($20,000 if married filing separately) [11.11]. The overall limit is reduced if your modified adjusted gross income is more than $500,000 ($250,000 if married filing separately) but will not be reduced below $10,000 ($5,000 if married filing separately) [11.11].",
+    "cited": [
+     "11.11"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "11.8",
+     "11.9",
+     "11.10",
+     "11.11",
+     "11.12",
+     "11.6",
+     "11.7",
+     "11.5"
+    ],
+    "calls": 1,
+    "tokens": 3064,
+    "tools": [],
+    "ms": 1302,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "n13",
+    "text": "If you were an eligible educator in 2025, you can deduct up to $300 of qualified expenses you paid in 2025 as an adjustment to gross income on Schedule 1 (Form 1040), line 11 [12.5]. If you and your spouse are filing jointly and both of you were eligible educators, the maximum deduction is $600, but neither spouse can deduct more than $300 of their qualified expenses [12.5].",
+    "cited": [
+     "12.5"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "12.5",
+     "12.6",
+     "12.7",
+     "12.8",
+     "12.9",
+     "12.10",
+     "12.11",
+     "6.5",
+     "12.4",
+     "12.1",
+     "12.2",
+     "12.3",
+     "8.4"
+    ],
+    "calls": 1,
+    "tokens": 2979,
+    "tools": [],
+    "ms": 949,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n14",
+    "text": "The exclusion for the qualified parking fringe benefit can’t be more than $325 a month [5.9].",
+    "cited": [
+     "5.9"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "5.9",
+     "5.10",
+     "5.11",
+     "5.12",
+     "8.19",
+     "5.24",
+     "5.25",
+     "5.3"
+    ],
+    "calls": 1,
+    "tokens": 2909,
+    "tools": [],
+    "ms": 782,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "n15",
+    "text": "You must file Schedule SE (Form 1040) if your net earnings from self-employment (excluding church employee income) were $400 or more, or if you had church employee income of $108.28 or more [1.9].",
+    "cited": [
+     "1.9"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.9",
+     "1.10",
+     "8.19",
+     "4.22",
+     "4.23",
+     "4.24",
+     "4.50",
+     "4.12",
+     "4.13"
+    ],
+    "calls": 1,
+    "tokens": 3021,
+    "tools": [],
+    "ms": 977,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "n16",
+    "text": "In most cases, the cost of up to $50,000 of group-term life insurance coverage provided to you by your employer (or former employer) isn’t included in your income [5.7].",
+    "cited": [
+     "5.7"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "5.7",
+     "5.8",
+     "5.9",
+     "8.6",
+     "8.7",
+     "8.8",
+     "5.11",
+     "5.12"
+    ],
+    "calls": 1,
+    "tokens": 2912,
+    "tools": [],
+    "ms": 1450,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "n17",
+    "text": "If you file your return more than 60 days after the due date, or extended due date, the minimum penalty is the smaller of $525 or 100% of the unpaid tax [1.56].",
+    "cited": [
+     "1.56"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.56",
+     "1.38",
+     "1.39",
+     "1.54",
+     "1.55"
+    ],
+    "calls": 1,
+    "tokens": 2919,
+    "tools": [],
+    "ms": 694,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n18",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "12.5",
+     "12.6",
+     "12.7",
+     "12.8",
+     "12.9",
+     "12.10",
+     "12.11",
+     "4.13",
+     "4.14",
+     "4.15",
+     "4.24",
+     "4.25",
+     "4.12",
+     "10.3",
+     "10.4",
+     "10.5"
+    ],
+    "calls": 1,
+    "tokens": 3016,
+    "tools": [],
+    "ms": 1124,
+    "kind": "number",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "n19",
+    "text": "For people age 65 or older, the bonus deduction is $6,000 ($12,000 if married filing jointly) for tax years beginning in 2025 through tax years beginning no later than 2028 [4.12].",
+    "cited": [
+     "4.12"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "10.5",
+     "10.6",
+     "10.7",
+     "10.8",
+     "10.3",
+     "10.4",
+     "10.1",
+     "10.2",
+     "4.12",
+     "4.13"
+    ],
+    "calls": 1,
+    "tokens": 3093,
+    "tools": [],
+    "ms": 909,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d01",
+    "text": "Generally, you must keep records that support items shown on your return until the period of limitations for that return runs out [1.47].",
+    "cited": [
+     "1.47"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.47",
+     "1.48",
+     "1.49",
+     "1.41",
+     "1.42",
+     "1.43",
+     "1.44",
+     "1.45",
+     "1.46",
+     "1.50",
+     "1.51"
+    ],
+    "calls": 1,
+    "tokens": 2951,
+    "tools": [],
+    "ms": 671,
+    "kind": "direct",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "d02",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "9.39",
+     "9.12",
+     "9.13",
+     "9.14"
+    ],
+    "calls": 1,
+    "tokens": 3041,
+    "tools": [],
+    "ms": 785,
+    "kind": "direct",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "d03",
+    "text": "The additional tax on early distributions is 10% of the amount of the early distribution that you must include in your gross income [9.32].",
+    "cited": [
+     "9.32"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.32",
+     "9.33",
+     "9.24",
+     "9.25",
+     "9.45",
+     "9.27",
+     "9.28",
+     "9.29"
+    ],
+    "calls": 1,
+    "tokens": 2905,
+    "tools": [],
+    "ms": 922,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d04",
+    "text": "In general, if the excess contributions for a year aren't withdrawn by the date your return for the year is due (including extensions), you are subject to a 6% tax [9.30]. You must pay the 6% tax each year on excess amounts that remain in your traditional IRA at the end of your tax year [9.30].",
+    "cited": [
+     "9.30"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.30",
+     "9.31",
+     "9.40",
+     "9.41",
+     "9.42",
+     "9.43",
+     "9.32",
+     "9.24",
+     "9.25"
+    ],
+    "calls": 1,
+    "tokens": 2864,
+    "tools": [],
+    "ms": 1025,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "d05",
+    "text": "You can complete Form 4868 as a worksheet or file a paper Form 4868 to get an automatic 6-month extension of time to file [1.19] [1.21]. You can also e-file Form 4868 using tax software, a tax professional, or Free File and Free File Fillable Forms [1.19]. If you e-file Form 4868, don't send a paper Form 4868 [1.19]. Alternatively, you can get an extension by paying part or all of your estimate of tax due by credit or debit card or by direct transfer from your bank account by phone or over the internet, in which case you don't file Form 4868 [1.19] [1.21].",
+    "cited": [
+     "1.19",
+     "1.21"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.19",
+     "1.20",
+     "1.21",
+     "1.22",
+     "1.23",
+     "1.54",
+     "1.12",
+     "1.13",
+     "1.14",
+     "1.15"
+    ],
+    "calls": 1,
+    "tokens": 3055,
+    "tools": [],
+    "ms": 1081,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d06",
+    "text": "Life insurance proceeds paid to you because of the death of the insured person aren’t taxable unless the policy was turned over to you for a price [8.4]. This is true even if the proceeds were paid under an accident or health insurance policy or an endowment contract [8.4]. However, interest income received as a result of life insurance proceeds may be taxable [8.4].",
+    "cited": [
+     "8.4"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "8.6",
+     "8.7",
+     "8.8",
+     "8.9",
+     "8.4",
+     "8.5",
+     "5.7",
+     "5.8",
+     "5.9",
+     "6.7",
+     "6.8",
+     "6.9",
+     "6.10"
+    ],
+    "calls": 1,
+    "tokens": 2939,
+    "tools": [],
+    "ms": 937,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "d07",
+    "text": "You can deduct your gambling losses for the year on Schedule A (Form 1040), line 16, but only up to the amount of your winnings [12.57] [8.19]. You can't deduct gambling losses that are more than your winnings [12.57].",
+    "cited": [
+     "12.57",
+     "8.19"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "12.55",
+     "12.56",
+     "12.57",
+     "12.58",
+     "12.59",
+     "12.60",
+     "12.61",
+     "12.62",
+     "8.19",
+     "12.50",
+     "12.51",
+     "12.52",
+     "12.53",
+     "12.54",
+     "4.18",
+     "4.19",
+     "4.20",
+     "4.21"
+    ],
+    "calls": 1,
+    "tokens": 3078,
+    "tools": [],
+    "ms": 1033,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "d08",
+    "text": "The second estimated tax payment for 2026 is due on June 15 [4.26] [4.28].",
+    "cited": [
+     "4.26",
+     "4.28"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "4.26",
+     "4.27",
+     "4.28",
+     "4.24",
+     "4.25",
+     "4.29",
+     "4.30",
+     "4.31",
+     "4.32",
+     "4.33"
+    ],
+    "calls": 1,
+    "tokens": 3072,
+    "tools": [],
+    "ms": 853,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "d09",
+    "text": "Generally, you must file your claim for a credit or refund within 3 years after the date you filed your original return or within 2 years after the date you paid the tax, whichever is later [1.54].",
+    "cited": [
+     "1.54"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.54",
+     "1.49",
+     "1.50",
+     "1.51"
+    ],
+    "calls": 1,
+    "tokens": 2978,
+    "tools": [],
+    "ms": 789,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d10",
+    "text": "To qualify as a student, your child must be, during some part of each of any 5 calendar months of the year:\n- A full-time student at a school that has a regular teaching staff and course of study, and a regularly enrolled student body at the school; or\n- A student taking a full-time, on-farm training course given by a school described above, or by a state, county, or local government agency [3.9].",
+    "cited": [
+     "3.9"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.2",
+     "3.9",
+     "3.10",
+     "3.14",
+     "3.15",
+     "3.8",
+     "3.6",
+     "3.7"
+    ],
+    "calls": 1,
+    "tokens": 2888,
+    "tools": [],
+    "ms": 1147,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d11",
+    "text": "The failure-to-file penalty is usually 5% for each month or part of a month that a return is late, but not more than 25% [1.56]. (If the failure to file is due to fraud, the penalty is 15% for each month or part of a month, up to a maximum of 75%.) [1.56]",
+    "cited": [
+     "1.56"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.56",
+     "1.38",
+     "1.39",
+     "1.54",
+     "1.55"
+    ],
+    "calls": 1,
+    "tokens": 2949,
+    "tools": [],
+    "ms": 1027,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c01",
+    "text": "No, you cannot claim them as a qualifying child because to meet the age test, the child must be under age 19 at the end of the year (unless they are a student under age 24 or permanently and totally disabled). [3.2]",
+    "cited": [
+     "3.2"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.13",
+     "3.2",
+     "2.13",
+     "3.9",
+     "3.10",
+     "14.5",
+     "14.6",
+     "14.7"
+    ],
+    "calls": 1,
+    "tokens": 2926,
+    "tools": [],
+    "ms": 836,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "c02",
+    "text": "Yes, if you use certain private delivery services designated by the IRS—such as FedEx First Overnight, FedEx Priority Overnight, FedEx Standard Overnight, FedEx 2 Day, FedEx International Next Flight Out, FedEx International Priority, FedEx International First, and FedEx International Economy—your return meets the \"timely mailing treated as timely filing/paying\" rule if it is properly addressed, has enough postage, and is postmarked by the due date [1.19].",
+    "cited": [
+     "1.19"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.19",
+     "1.54",
+     "1.55",
+     "1.56"
+    ],
+    "calls": 1,
+    "tokens": 2988,
+    "tools": [],
+    "ms": 829,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c03",
+    "text": "Yes, if you can’t pay the full amount due with your return, you can ask to make monthly installment payments for the full or a partial amount [1.38]. However, you will be charged interest and may be charged a late payment penalty on the tax not paid by the date your return is due, even if your request to pay in installments is granted, and if your request is granted, you must also pay a fee [1.38].",
+    "cited": [
+     "1.38"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.38",
+     "1.39",
+     "13.4",
+     "13.5",
+     "4.29",
+     "4.30",
+     "4.31",
+     "4.32",
+     "4.33",
+     "1.35",
+     "1.36",
+     "1.37",
+     "4.28"
+    ],
+    "calls": 1,
+    "tokens": 3048,
+    "tools": [],
+    "ms": 1063,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "c04",
+    "text": "If you receive a refund because of your amended return, interest will be paid on it from the due date of your original return or the date you filed your original return, whichever is later, to the date you filed the amended return [1.54] [1.55] [1.56]. However, if the refund isn’t made within 45 days after you file the amended return, interest will be paid up to the date the refund is paid [1.54] [1.55] [1.56]. \n\nThe publication doesn't cover interest on delays for original, non-amended returns.",
+    "cited": [
+     "1.54",
+     "1.55",
+     "1.56"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.38",
+     "1.39",
+     "1.51",
+     "1.52",
+     "1.53",
+     "1.54",
+     "1.55",
+     "1.56",
+     "13.4",
+     "13.5"
+    ],
+    "calls": 1,
+    "tokens": 3067,
+    "tools": [],
+    "ms": 1104,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "c05",
+    "text": "Your standard deduction is $1,350 [10.8].",
+    "cited": [
+     "10.8"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "10.8",
+     "4.12",
+     "4.13",
+     "8.13",
+     "10.1",
+     "10.2",
+     "10.3"
+    ],
+    "calls": 1,
+    "tokens": 3062,
+    "tools": [],
+    "ms": 778,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c06",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "5.3",
+     "5.4",
+     "5.5",
+     "6.4",
+     "6.5",
+     "5.11",
+     "5.12",
+     "4.17",
+     "4.18",
+     "4.19",
+     "12.50",
+     "12.51",
+     "12.52",
+     "12.53",
+     "12.54",
+     "12.55"
+    ],
+    "calls": 1,
+    "tokens": 2960,
+    "tools": [],
+    "ms": 815,
+    "kind": "colloquial",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "c07",
+    "text": "Your IRA contributions for 2025 are limited to $3,500, the amount of your compensation [9.6].",
+    "cited": [
+     "9.6"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.5",
+     "9.6",
+     "9.7",
+     "9.39",
+     "9.4",
+     "9.30",
+     "9.31"
+    ],
+    "calls": 1,
+    "tokens": 2963,
+    "tools": [],
+    "ms": 945,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c08",
+    "text": "You must begin receiving your required minimum distributions by April 1 of the year following the year you reach age 73 [9.25].",
+    "cited": [
+     "9.25"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.25",
+     "9.26",
+     "9.32",
+     "9.24",
+     "9.18",
+     "9.19",
+     "9.34",
+     "9.35",
+     "9.36",
+     "9.37",
+     "9.38"
+    ],
+    "calls": 1,
+    "tokens": 2917,
+    "tools": [],
+    "ms": 1119,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c09",
+    "text": "If you are legally blind, you are entitled to a higher standard deduction (using Table 10-2 instead of Table 10-1) if you are not a dependent whom someone else can claim. [10.1] [10.10]",
+    "cited": [
+     "10.1",
+     "10.10"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "10.10",
+     "10.8",
+     "10.1",
+     "10.2",
+     "10.3",
+     "10.9"
+    ],
+    "calls": 1,
+    "tokens": 2924,
+    "tools": [],
+    "ms": 4917,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "c10",
+    "text": "If your employer provides you with a qualified transportation fringe benefit such as a transit pass, it can be excluded from your income, up to certain limits [5.10]. The exclusion for transit pass fringe benefits can’t be more than $325 a month [5.10]. If the benefits have a value that is more than this limit, the excess must be included in your income [5.10].",
+    "cited": [
+     "5.10"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "5.9",
+     "5.10",
+     "5.11",
+     "5.12",
+     "4.15",
+     "4.16",
+     "4.17",
+     "4.18",
+     "4.19",
+     "5.3",
+     "5.4",
+     "5.5"
+    ],
+    "calls": 1,
+    "tokens": 2985,
+    "tools": [],
+    "ms": 880,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "c11",
+    "text": "An exemption is good for only 1 year [4.12]. To continue your exemption, you must generally give your employer a new Form W-4 by February 15 each year [4.12].",
+    "cited": [
+     "4.12"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "4.12",
+     "4.13",
+     "4.6",
+     "4.7",
+     "4.8",
+     "4.9",
+     "4.10",
+     "4.11",
+     "4.24",
+     "4.25"
+    ],
+    "calls": 1,
+    "tokens": 3042,
+    "tools": [],
+    "ms": 739,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c12",
+    "text": "No, you cannot just not report anything [12.57]. \n\nYou must report the full amount of your gambling winnings for the year on Schedule 1 (Form 1040), line 8b [12.57]. You cannot reduce your gambling winnings by your gambling losses and report the difference; you must report the full amount of your winnings as income and claim your losses (up to the amount of your winnings) as an itemized deduction on Schedule A (Form 1040), line 16 [12.57].",
+    "cited": [
+     "12.57"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "12.55",
+     "12.56",
+     "12.57",
+     "12.58",
+     "12.59",
+     "12.60",
+     "12.61",
+     "12.62",
+     "4.18",
+     "4.19",
+     "4.20",
+     "4.21",
+     "8.19",
+     "4.41",
+     "4.42",
+     "4.43",
+     "4.44"
+    ],
+    "calls": 1,
+    "tokens": 3165,
+    "tools": [],
+    "ms": 1090,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "c13",
+    "text": "Yes, your 23-year-old daughter can still be your qualifying child if she is a student, is younger than you (or your spouse if filing jointly), and meets the other tests to be a qualifying child [3.2].",
+    "cited": [
+     "3.2"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.9",
+     "3.10",
+     "3.2",
+     "3.13",
+     "2.13",
+     "2.14"
+    ],
+    "calls": 1,
+    "tokens": 2941,
+    "tools": [],
+    "ms": 989,
+    "kind": "colloquial",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "c14",
+    "text": "If an amount is contributed to your traditional IRA between January 1 and April 15, you should tell the sponsor which year (the current year or the previous year) the contribution is for [9.6].",
+    "cited": [
+     "9.6"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.40",
+     "9.41",
+     "9.42",
+     "9.43",
+     "9.6",
+     "9.7",
+     "9.39",
+     "9.14",
+     "9.38"
+    ],
+    "calls": 1,
+    "tokens": 2971,
+    "tools": [],
+    "ms": 805,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "c15",
+    "text": "Under a multiple support agreement, if you and your siblings together provide the entire support of your parent for the year, and individually each provide more than 10% of the support (while no single person provides more than half), you can agree that any one of you who individually provides more than 10% of the support can claim your parent as a dependent [3.20] [3.21]. \n\nThe person who claims your parent must meet these conditions:\n- They must individually provide more than 10% of the parent's support [3.20].\n- Each of the other contributors who provided more than 10% must sign a statement agreeing not to claim the parent as a dependent for that year, which the person claiming the dependent must keep for their own records [3.20] [3.21].\n- A multiple support declaration (such as Form 2120) identifying each of the others who agreed not to claim the parent must be attached to the return of the person claiming the parent [3.20] [3.21].",
+    "cited": [
+     "3.20",
+     "3.21"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.18",
+     "3.19",
+     "3.20",
+     "3.21",
+     "3.22",
+     "3.23",
+     "3.16",
+     "3.17",
+     "2.13"
+    ],
+    "calls": 1,
+    "tokens": 3102,
+    "tools": [],
+    "ms": 1262,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c16",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "8.12",
+     "4.41",
+     "4.42",
+     "4.43",
+     "4.44",
+     "7.6",
+     "7.7",
+     "4.1",
+     "4.2",
+     "8.1"
+    ],
+    "calls": 1,
+    "tokens": 2970,
+    "tools": [],
+    "ms": 928,
+    "kind": "colloquial",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "c17",
+    "text": "The tips you receive while working on your job are considered part of your pay, and you must include your tips on your tax return on the same line as your regular pay [4.14].",
+    "cited": [
+     "4.14"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "4.13",
+     "4.14",
+     "4.15",
+     "4.16",
+     "4.17",
+     "5.3",
+     "5.4",
+     "5.5",
+     "4.38",
+     "4.39",
+     "4.22",
+     "4.23",
+     "4.24"
+    ],
+    "calls": 1,
+    "tokens": 2989,
+    "tools": [],
+    "ms": 845,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "c18",
+    "text": "You can file as a qualifying surviving spouse for 2025 if you meet all of the eligibility rules, which include having a child or stepchild whom you can claim as a dependent (or could claim except for certain conditions) who lived in your home all year (except for temporary absences), and you paid more than half the cost of keeping up the home [2.14] [3.1].",
+    "cited": [
+     "2.14",
+     "3.1"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "2.14",
+     "2.2",
+     "2.3",
+     "2.4",
+     "3.1",
+     "10.3",
+     "10.4",
+     "10.5",
+     "2.5"
+    ],
+    "calls": 1,
+    "tokens": 3010,
+    "tools": [],
+    "ms": 1288,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c19",
+    "text": "You can't use the child to claim the CTC or ACTC because the child was not under age 17 at the end of 2025 [14.4]. If your child is age 17 or older at the end of 2025, see Credit for Other Dependents (ODC) [14.4].",
+    "cited": [
+     "14.4"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "14.4",
+     "14.5",
+     "14.2",
+     "14.3",
+     "13.6",
+     "14.1",
+     "14.6",
+     "14.7",
+     "3.2",
+     "3.3",
+     "3.4",
+     "3.5"
+    ],
+    "calls": 1,
+    "tokens": 3018,
+    "tools": [],
+    "ms": 895,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "c20",
+    "text": "Yes, you can move money from one IRA to another without paying tax through the following methods:\n\n* **Rollovers:** You can withdraw, tax free, all or part of the assets from one traditional IRA if you reinvest them within 60 days in the same or another traditional IRA, subject to the one-rollover-per-year limitation. [9.18]\n* **Trustee-to-trustee transfers:** A transfer of funds in your traditional IRA from one trustee directly to another is tax free and is not affected by the 1-year waiting period required between rollovers. [9.16]",
+    "cited": [
+     "9.18",
+     "9.16"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.18",
+     "9.19",
+     "9.23",
+     "9.24",
+     "9.15",
+     "9.16",
+     "9.17",
+     "9.20",
+     "9.21",
+     "9.22"
+    ],
+    "calls": 1,
+    "tokens": 2942,
+    "tools": [],
+    "ms": 1253,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "m01",
+    "text": "Yes, a qualifying relative can be your father or mother [2.13], and your mother's gross income for the year must be less than $5,200 [3.2].",
+    "cited": [
+     "2.13",
+     "3.2"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.2",
+     "3.14",
+     "3.15",
+     "2.13",
+     "3.11",
+     "2.14"
+    ],
+    "calls": 1,
+    "tokens": 2929,
+    "tools": [],
+    "ms": 897,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "m02",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "3.5",
+     "3.6",
+     "3.2",
+     "3.3",
+     "3.4",
+     "2.6",
+     "2.7",
+     "7.2",
+     "3.12",
+     "3.13"
+    ],
+    "calls": 1,
+    "tokens": 2972,
+    "tools": [],
+    "ms": 743,
+    "kind": "multi-hop",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "m03",
+    "text": "If distributions are less than the required minimum distribution for the year, you may have to pay a 25% excise tax for that year on the amount not distributed as required [9.33]. \n\nIf the excess accumulation is due to reasonable error, and you have taken, or are taking, steps to remedy the insufficient distribution, you can request that the tax be waived [9.33]. To request a waiver, attach a statement of explanation and complete Form 5329 as instructed under \"Waiver of tax for reasonable cause\" in the Instructions for Form 5329 [9.33].",
+    "cited": [
+     "9.33"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.24",
+     "9.25",
+     "9.32",
+     "9.33",
+     "9.27",
+     "9.28",
+     "9.29",
+     "9.34",
+     "9.26"
+    ],
+    "calls": 1,
+    "tokens": 3009,
+    "tools": [],
+    "ms": 1042,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m04",
+    "text": "Yes, the IRS can figure your tax for you [13.4]. \n\nThe IRS can’t figure your tax for you if your taxable income is $100,000 or more [13.4].",
+    "cited": [
+     "13.4"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "13.4",
+     "13.5",
+     "4.29",
+     "4.30",
+     "4.31",
+     "4.32",
+     "4.33",
+     "4.26",
+     "4.27",
+     "4.28",
+     "1.38",
+     "1.39"
+    ],
+    "calls": 1,
+    "tokens": 3021,
+    "tools": [],
+    "ms": 790,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m05",
+    "text": "Sometimes no one provides more than half of the support of a person, but two or more persons, each of whom would be able to claim the person as a dependent except for the support test, together provide more than half of the person's support [3.20]. When this happens, any one of you who individually provides more than 10% of the person's support (but only one) can claim the person as a dependent under a multiple support agreement [3.20]. \n\nTo do this, each of the other persons who provided more than 10% of the support must sign a statement agreeing not to claim the person as a dependent for that year, and the person claiming the dependent must keep these signed statements for their own records [3.20]. Additionally, a multiple support declaration identifying each of the others who agreed not to claim the person as a dependent must be attached to the return of the person claiming the dependent (Form 2120 can be used for this purpose) [3.20].",
+    "cited": [
+     "3.20"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.11",
+     "3.15",
+     "3.16",
+     "3.17",
+     "3.19",
+     "3.20",
+     "3.21"
+    ],
+    "calls": 1,
+    "tokens": 3060,
+    "tools": [],
+    "ms": 1150,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "m06",
+    "text": "If you are due a refund, you may get interest on it [1.51]. If the refund is made within 45 days after the due date of your return, no interest will be paid [1.51]. If you file your return after the due date (including extensions), no interest will be paid if the refund is made within 45 days after the date you filed [1.51]. If the refund isn't made within this 45-day period, interest will be paid from the due date of the return or from the date you filed, whichever is later [1.51].\n\nTo file a claim for credit or refund (such as with an amended return), you generally must file within the later of 3 years or 2 years after the tax was paid [1.49].",
+    "cited": [
+     "1.51",
+     "1.49"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.51",
+     "1.52",
+     "1.53",
+     "1.54",
+     "1.55",
+     "1.56",
+     "1.49",
+     "1.50"
+    ],
+    "calls": 1,
+    "tokens": 3132,
+    "tools": [],
+    "ms": 923,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m07",
+    "text": "You may be entitled to the Credit for Other Dependents (ODC) for each qualifying child who does not qualify you for the child tax credit [3.2]. The maximum amount you can claim for this credit is $500 for each qualifying dependent [14.7].",
+    "cited": [
+     "3.2",
+     "14.7"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.2",
+     "3.3",
+     "3.4",
+     "3.5",
+     "14.4",
+     "14.5",
+     "14.7",
+     "14.8",
+     "14.9",
+     "14.10",
+     "14.2",
+     "14.3",
+     "3.13"
+    ],
+    "calls": 1,
+    "tokens": 3028,
+    "tools": [],
+    "ms": 826,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m08",
+    "text": "To be eligible to file your 2025 return as a qualifying surviving spouse, you must meet all of the following tests:\n- You were entitled to file a joint return with your spouse for the year your spouse died (regardless of whether you actually filed a joint return) [2.14].\n- Your spouse died in 2023 or 2024 and you didn't remarry before the end of 2025 [2.14].\n- You have a child or stepchild (not a foster child) whom you can claim as a dependent or could claim as a dependent except that, for 2025: (a) the child had gross income of $5,200 or more, (b) the child filed a joint return, or (c) you could be claimed as a dependent on someone else’s return [2.14].\n- This child lived in your home all year, except for temporary absences, or you meet exceptions for a child born or died during the year, an adopted/placed child, or a kidnapped child [2.14] [2.14].\n\nTo figure whether you paid more than half the cost of keeping up a home, you can use Worksheet 2-1, comparing the total amount you paid against the amount others paid [2.11]. \n- **Costs you include:** Rent, mortgage interest, real estate taxes, insurance on the home, repairs, utilities, and food eaten in the home [2.11].\n- **Costs you don't include:** Clothing, education, medical treatment, vacations, life insurance, transportation, or the value of your services or those of a member of your household [2.11].\nIf the total amount you paid is more than the amount others paid, you meet the requirement of paying more than half of the cost of keeping up the home [2.11].",
+    "cited": [
+     "2.14",
+     "2.11"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "2.11",
+     "2.12",
+     "2.13",
+     "2.14",
+     "3.1",
+     "9.12"
+    ],
+    "calls": 1,
+    "tokens": 3344,
+    "tools": [],
+    "ms": 1500,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m09",
+    "text": "If the amount you repaid was more than $3,000, you can deduct the repayment as an other itemized deduction on Schedule A (Form 1040), line 16, if you included the income under a claim of right [8.15]. However, you can choose to take a credit for the year of repayment instead [8.15]. You should figure your tax under both methods (deduction or credit) and compare the results, using the method that results in less tax [8.15]. \n\nIf the amount repaid was $3,000 or less, you are not able to deduct it from your income in the year you repaid it, because miscellaneous itemized deductions can no longer be claimed starting in 2018 [8.15].",
+    "cited": [
+     "8.15"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "8.13",
+     "8.15",
+     "11.5",
+     "8.12",
+     "1.54"
+    ],
+    "calls": 1,
+    "tokens": 3190,
+    "tools": [],
+    "ms": 1481,
+    "kind": "multi-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "m10",
+    "text": "You can claim exemption from withholding for 2026 only if both of the following situations apply:\n- For 2025, you had a right to a refund of all federal income tax withheld because you had no tax liability [4.10].\n- For 2026, you expect a refund of all federal income tax withheld because you expect to have no tax liability [4.10].\n\nTo claim exemption, you must give your employer a Form W-4, writing \"Exempt\" on the form in the space below Step 4(c) and completing the applicable steps of the form [4.13]. An exemption is good for only 1 year, and you must generally give your employer a new Form W-4 by February 15 each year to continue your exemption [4.13].",
+    "cited": [
+     "4.10",
+     "4.13"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "4.10",
+     "4.11",
+     "4.12",
+     "4.6",
+     "4.7",
+     "4.8",
+     "4.9",
+     "4.13",
+     "4.24",
+     "4.25",
+     "4.1",
+     "4.2"
+    ],
+    "calls": 1,
+    "tokens": 3174,
+    "tools": [],
+    "ms": 962,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "m11",
+    "text": "Amounts that must be distributed (required minimum distributions) during a particular year are not eligible for rollover treatment [9.24].\n\nYou must generally start receiving distributions from your IRA by April 1 of the year following the year in which you reach age 73 [9.24].",
+    "cited": [
+     "9.24"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.19",
+     "9.20",
+     "9.18",
+     "9.25",
+     "9.26",
+     "9.24",
+     "9.43"
+    ],
+    "calls": 1,
+    "tokens": 2887,
+    "tools": [],
+    "ms": 911,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "m12",
+    "text": "If you apply for an ITIN on or before the due date of your 2025 return (including extensions) and the IRS issues you an ITIN as a result of the application, the IRS will consider your ITIN as issued on or before the due date of your return [14.2].",
+    "cited": [
+     "14.2"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "14.2",
+     "1.28",
+     "14.3",
+     "14.4",
+     "14.5",
+     "1.27",
+     "14.6",
+     "14.7"
+    ],
+    "calls": 1,
+    "tokens": 2965,
+    "tools": [],
+    "ms": 886,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m13",
+    "text": "The standard deduction for a decedent's final tax return is the same as it would have been had the decedent continued to live, but if the decedent wasn't 65 or older at the time of death, the higher standard deduction for age can't be claimed [10.1].",
+    "cited": [
+     "10.1"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "10.3",
+     "10.4",
+     "10.5",
+     "10.1",
+     "10.2",
+     "10.6",
+     "10.7",
+     "10.8",
+     "10.10"
+    ],
+    "calls": 1,
+    "tokens": 3137,
+    "tools": [],
+    "ms": 5676,
+    "kind": "multi-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "h02",
+    "text": "If your qualifying child does not have the required SSN (one that is valid for employment and issued by the SSA before the due date of your 2025 return, including extensions), you can't use the child to claim the Child Tax Credit (CTC) or Additional Child Tax Credit (ACTC) on either your original or amended 2025 tax return [14.5] [14.2]. \n\nHowever, if your qualifying child doesn't have the required SSN but has another type of TIN issued on or before the due date of your 2025 return (including extensions), you may be able to claim the Credit for Other Dependents (ODC) for that child [14.2].",
+    "cited": [
+     "14.5",
+     "14.2"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "14.5",
+     "14.6",
+     "14.7",
+     "14.2",
+     "1.28",
+     "14.3",
+     "14.4",
+     "3.23",
+     "4.1"
+    ],
+    "calls": 1,
+    "tokens": 3008,
+    "tools": [],
+    "ms": 1043,
+    "kind": "hard-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "h03",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "3.14",
+     "3.15",
+     "3.2",
+     "2.13",
+     "3.11",
+     "14.7",
+     "14.8",
+     "14.9",
+     "14.10"
+    ],
+    "calls": 1,
+    "tokens": 2938,
+    "tools": [],
+    "ms": 969,
+    "kind": "hard-hop",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "h04",
+    "text": "People who are in business for themselves will generally have to pay their tax through estimated tax [4.1]. \n\nYou must make estimated tax payments if you meet the requirements to do so (such as owing $1,000 or more after subtracting withholding and refundable credits, and not meeting exceptions based on percentages of prior or current year tax) [4.25]. \n\nThe tax year is divided into four payment periods with the following general due dates:\n- **Jan. 1–March 31 period:** Due April 15 [4.26].\n- **April 1–May 31 period:** Due June 15 [4.26].\n- **June 1–August 31 period:** Due Sept. 15 [4.26].\n- **Sept. 1–Dec. 31 period:** Due Jan. 15 of the next year [4.26].\n\nIf you do not have income subject to estimated tax until a later payment period, your first payment must be made by the due date for that specific period [4.28]. If a due date falls on a Saturday, Sunday, or legal holiday, the payment is on time if made on the next day that isn't a Saturday, Sunday, or legal holiday [4.27]. Additionally, you do not need to make the January 15 payment if you file your Form 1040 or 1040-SR by February 1 and pay the rest of the tax you owe [4.27].",
+    "cited": [
+     "4.1",
+     "4.25",
+     "4.26",
+     "4.28",
+     "4.27"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "4.28",
+     "4.29",
+     "4.25",
+     "4.1",
+     "4.2",
+     "4.26",
+     "4.27",
+     "4.30",
+     "4.31",
+     "4.32",
+     "4.33"
+    ],
+    "calls": 1,
+    "tokens": 3328,
+    "tools": [],
+    "ms": 2072,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h05",
+    "text": "If the total amount shown in box 5 of all your Forms SSA-1099 and RRB-1099 is a negative figure, you may be able to deduct part of this negative figure that represents benefits you included in gross income in an earlier year if the figure is more than $3,000 [7.7]. If the figure is $3,000 or less, it is a miscellaneous itemized deduction and can no longer be deducted [7.7]. \n\nIf the deduction is more than $3,000, you should figure your tax two ways (comparing Method 1 with the itemized deduction on Schedule A (Form 1040), line 16, and Method 2 using a tax credit) and use the method that results in less tax [7.7].",
+    "cited": [
+     "7.7"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "8.15",
+     "7.6",
+     "7.7",
+     "8.1",
+     "8.17",
+     "8.16"
+    ],
+    "calls": 1,
+    "tokens": 3095,
+    "tools": [],
+    "ms": 1791,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h06",
+    "text": "For purposes of the gross income test, the gross income of an individual who is permanently and totally disabled at any time during the year doesn't include income for services the individual performs at a sheltered workshop [3.16]. The availability of medical care at the workshop must be the main reason for the individual's presence there, and the income must come solely from activities at the workshop that are incident to this medical care [3.17].\n\nPermanently and totally disabled has the same meaning here as under Qualifying Child [3.17]. (The provided text does not define the meaning under Qualifying Child.)",
+    "cited": [
+     "3.16",
+     "3.17"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.17",
+     "3.18",
+     "3.16",
+     "1.10",
+     "3.2",
+     "3.3",
+     "3.4",
+     "3.5"
+    ],
+    "calls": 1,
+    "tokens": 3059,
+    "tools": [],
+    "ms": 965,
+    "kind": "hard-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h07",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "8.3",
+     "12.11",
+     "12.12",
+     "12.13",
+     "12.14",
+     "12.15",
+     "12.16",
+     "12.17",
+     "1.35",
+     "6.12",
+     "1.56"
+    ],
+    "calls": 1,
+    "tokens": 2940,
+    "tools": [],
+    "ms": 882,
+    "kind": "hard-hop",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "o01",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "4.24",
+     "4.25",
+     "4.50",
+     "1.19",
+     "13.2",
+     "11.8"
+    ],
+    "calls": 1,
+    "tokens": 3085,
+    "tools": [],
+    "ms": 707,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o02",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "8.12",
+     "8.13",
+     "11.8",
+     "11.9",
+     "12.30",
+     "12.31",
+     "12.32",
+     "12.33",
+     "12.34",
+     "12.35",
+     "12.36",
+     "12.37",
+     "11.2",
+     "11.3",
+     "11.4",
+     "11.5"
+    ],
+    "calls": 1,
+    "tokens": 2966,
+    "tools": [],
+    "ms": 794,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o03",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "3.13",
+     "3.2",
+     "3.3",
+     "3.4",
+     "3.5",
+     "3.19",
+     "3.20",
+     "3.21",
+     "3.6",
+     "14.7",
+     "14.8",
+     "14.9",
+     "14.10"
+    ],
+    "calls": 1,
+    "tokens": 2937,
+    "tools": [],
+    "ms": 1276,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o04",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "1.3",
+     "8.13",
+     "11.10",
+     "11.11",
+     "11.12",
+     "11.6",
+     "11.7",
+     "11.8",
+     "11.9"
+    ],
+    "calls": 1,
+    "tokens": 3006,
+    "tools": [],
+    "ms": 715,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o05",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "10.10",
+     "10.1",
+     "10.2",
+     "10.3",
+     "9.45",
+     "4.24",
+     "4.25",
+     "12.5",
+     "12.6",
+     "12.7",
+     "12.8",
+     "12.9",
+     "12.10",
+     "12.11"
+    ],
+    "calls": 1,
+    "tokens": 3020,
+    "tools": [],
+    "ms": 1376,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o06",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "12.1",
+     "12.2",
+     "12.3",
+     "12.4",
+     "12.30",
+     "12.31",
+     "12.32",
+     "12.33",
+     "12.34",
+     "12.35",
+     "12.36",
+     "12.37",
+     "12.26",
+     "12.27",
+     "12.28",
+     "12.29",
+     "8.13",
+     "12.5",
+     "12.6",
+     "12.7",
+     "12.8",
+     "12.9",
+     "12.10",
+     "12.11"
+    ],
+    "calls": 1,
+    "tokens": 3010,
+    "tools": [],
+    "ms": 741,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o07",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "8.13",
+     "8.14",
+     "8.15",
+     "1.49",
+     "1.50",
+     "1.51",
+     "11.12",
+     "12.1",
+     "11.8",
+     "11.9",
+     "11.11"
+    ],
+    "calls": 1,
+    "tokens": 2852,
+    "tools": [],
+    "ms": 774,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o08",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "8.10",
+     "8.11",
+     "8.12",
+     "4.20",
+     "4.21",
+     "4.22",
+     "4.2",
+     "4.3",
+     "4.4",
+     "10.8",
+     "1.56"
+    ],
+    "calls": 1,
+    "tokens": 2999,
+    "tools": [],
+    "ms": 714,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o09",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "1.1",
+     "1.2",
+     "1.3",
+     "13.5",
+     "13.6",
+     "1.28",
+     "1.29",
+     "1.30",
+     "1.12",
+     "1.13",
+     "1.14",
+     "1.15",
+     "1.41",
+     "1.42",
+     "1.43",
+     "1.44",
+     "1.45",
+     "1.46"
+    ],
+    "calls": 1,
+    "tokens": 2928,
+    "tools": [],
+    "ms": 712,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o10",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "4.24",
+     "4.25",
+     "8.4",
+     "8.5",
+     "8.6",
+     "10.3",
+     "10.4",
+     "10.5",
+     "12.5",
+     "12.6",
+     "12.7",
+     "12.8",
+     "12.9",
+     "12.10",
+     "12.11"
+    ],
+    "calls": 1,
+    "tokens": 3015,
+    "tools": [],
+    "ms": 803,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o11",
+    "text": "For more information about the deduction for charitable contributions, see Pub. 526 [3.11]. The provided text does not contain the specific rules or limits for deducting charitable donations to a church, as it refers readers to Pub. 526 [3.11].",
+    "cited": [
+     "3.11"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "5.14",
+     "5.15",
+     "5.16",
+     "5.17",
+     "3.11",
+     "3.12",
+     "12.30",
+     "12.31",
+     "12.32",
+     "12.33",
+     "12.34",
+     "12.35",
+     "12.36",
+     "12.37",
+     "12.41",
+     "12.42",
+     "12.43",
+     "12.44",
+     "12.45",
+     "12.46",
+     "12.47",
+     "12.48",
+     "12.49",
+     "12.50",
+     "5.9"
+    ],
+    "calls": 1,
+    "tokens": 3058,
+    "tools": [],
+    "ms": 1132,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": false,
+    "cites_expected": null,
+    "found_expected": null
+   }
+  ],
+  "rag-sections": [
+   {
+    "id": "n01",
+    "text": "April 15, 2026, is the due date for filing your 2025 income tax return if you use the calendar year [1.19]. If you are a U.S. citizen or resident outside the United States and file on a calendar year basis without an extension, the due date is June 15, 2026 [1.19]. If you use a fiscal year, your return is due by the 15th day of the 4th month after the close of your fiscal year [1.19]. When the due date falls on a Saturday, Sunday, or legal holiday, the due date is delayed until the next business day [1.19].",
+    "cited": [
+     "1.19"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.19",
+     "4.40",
+     "1.50",
+     "1.21"
+    ],
+    "calls": 1,
+    "tokens": 2211,
+    "tools": [],
+    "ms": 1323,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n02",
+    "text": "If you get the automatic extension, you have until October 15, 2026, to file your 2025 return [1.21] [1.19].",
+    "cited": [
+     "1.21",
+     "1.19"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.21",
+     "1.22",
+     "1.19"
+    ],
+    "calls": 1,
+    "tokens": 2301,
+    "tools": [],
+    "ms": 764,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n03",
+    "text": "For most single filers, the 2025 standard deduction is $15,750 [10.10].",
+    "cited": [
+     "10.10"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "10.10",
+     "10.3",
+     "10.2",
+     "10.7"
+    ],
+    "calls": 1,
+    "tokens": 2052,
+    "tools": [],
+    "ms": 7103,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n04",
+    "text": "For 2025, the standard deduction for married filing jointly is $31,500 [10.10].",
+    "cited": [
+     "10.10"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "10.10",
+     "10.7",
+     "10.5",
+     "12.5"
+    ],
+    "calls": 1,
+    "tokens": 2179,
+    "tools": [],
+    "ms": 873,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n05",
+    "text": "For most people with a head of household filing status, the standard deduction is $23,625 [10.10].",
+    "cited": [
+     "10.10"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "10.1",
+     "10.10",
+     "10.8",
+     "10.2"
+    ],
+    "calls": 1,
+    "tokens": 2607,
+    "tools": [],
+    "ms": 772,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n06",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "10.3",
+     "10.2",
+     "10.5",
+     "10.7",
+     "10.8"
+    ],
+    "calls": 1,
+    "tokens": 1830,
+    "tools": [],
+    "ms": 1143,
+    "kind": "number",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "n07",
+    "text": "For 2025, the most that can be contributed to your traditional IRA is generally the smaller of the following amounts:\n- $7,000 ($8,000 if you are 50 or older) [9.6].\n- Your taxable compensation for the year [9.6].\n\nThis is the limit regardless of whether the contributions are to one or more traditional IRAs or whether all or part of the contributions are nondeductible [9.6].",
+    "cited": [
+     "9.6"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.6",
+     "9.12",
+     "9.39",
+     "9.40"
+    ],
+    "calls": 1,
+    "tokens": 2340,
+    "tools": [],
+    "ms": 1166,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n08",
+    "text": "For 2025, if contributions are made only to Roth IRAs, the contribution limit is generally up to $8,000 if you are 50 or older, provided your modified AGI doesn't require a reduction or prohibit contributions [9.39]. If contributions are made to both Roth IRAs and traditional IRAs, the limit is generally $8,000 minus all contributions (other than employer contributions under a SEP arrangement or SIMPLE IRA plan) for the year to all IRAs other than Roth IRAs, or your taxable compensation minus those same contributions, whichever is less [9.39].",
+    "cited": [
+     "9.39"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.6",
+     "9.39",
+     "9.40"
+    ],
+    "calls": 1,
+    "tokens": 2451,
+    "tools": [],
+    "ms": 914,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n09",
+    "text": "The maximum amount you can claim for the Child Tax Credit (CTC) is $2,200 for each child who qualifies you for the CTC [14.4] [14.1].",
+    "cited": [
+     "14.4",
+     "14.1"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "14.4",
+     "14.7",
+     "14.1",
+     "14.5"
+    ],
+    "calls": 1,
+    "tokens": 1512,
+    "tools": [],
+    "ms": 777,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n10",
+    "text": "The maximum amount you can claim for the credit for other dependents (ODC) is $500 for each qualifying dependent. [14.7] [14.8]",
+    "cited": [
+     "14.7",
+     "14.8"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "14.7",
+     "14.4",
+     "14.1",
+     "14.8",
+     "14.11"
+    ],
+    "calls": 1,
+    "tokens": 1366,
+    "tools": [],
+    "ms": 671,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n11",
+    "text": "To meet the gross income test for a qualifying relative, a person's gross income for the year must be less than $5,200 [3.17].",
+    "cited": [
+     "3.17"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.17",
+     "14.10",
+     "4.25",
+     "4.50",
+     "3.14"
+    ],
+    "calls": 1,
+    "tokens": 2098,
+    "tools": [],
+    "ms": 702,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n12",
+    "text": "The deduction for state and local taxes is limited to $40,000 ($20,000 if married filing separately) [11.12]. The overall limit is reduced if your modified adjusted gross income is more than $500,000 ($250,000 if married filing separately) but will not be reduced below $10,000 ($5,000 if married filing separately) [11.12].",
+    "cited": [
+     "11.12"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "11.4",
+     "11.8",
+     "11.12",
+     "11.7",
+     "11.5"
+    ],
+    "calls": 1,
+    "tokens": 2516,
+    "tools": [],
+    "ms": 1060,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n13",
+    "text": "If you were an eligible educator in 2025, you can deduct up to $300 of qualified expenses you paid in 2025 as an adjustment to gross income on Schedule 1 (Form 1040), line 11 [12.5]. If you and your spouse are filing jointly and both of you were eligible educators, the maximum deduction is $600, but neither spouse can deduct more than $300 of their qualified expenses [12.5].",
+    "cited": [
+     "12.5"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "12.5",
+     "5.8",
+     "8.19",
+     "12.60",
+     "12.4"
+    ],
+    "calls": 1,
+    "tokens": 1669,
+    "tools": [],
+    "ms": 1020,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n14",
+    "text": "The exclusion for the qualified parking fringe benefit can't be more than $325 a month [5.11].",
+    "cited": [
+     "5.11"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "5.11",
+     "5.12",
+     "5.3",
+     "9.12",
+     "8.19"
+    ],
+    "calls": 1,
+    "tokens": 2847,
+    "tools": [],
+    "ms": 723,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n15",
+    "text": "You must file Form 1040 or 1040-SR and Schedule SE (Form 1040), Self-Employment Tax, if your net earnings from self-employment (excluding church employee income) were $400 or more [1.10].",
+    "cited": [
+     "1.10"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.10",
+     "1.3"
+    ],
+    "calls": 1,
+    "tokens": 2797,
+    "tools": [],
+    "ms": 794,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n16",
+    "text": "In most cases, the cost of up to $50,000 of group-term life insurance coverage provided to you by your employer (or former employer) isn’t included in your income [5.9].",
+    "cited": [
+     "5.9"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "5.9",
+     "5.12"
+    ],
+    "calls": 1,
+    "tokens": 2869,
+    "tools": [],
+    "ms": 771,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n17",
+    "text": "If you file your return more than 60 days after the due date, or extended due date, the minimum penalty is the smaller of $525 or 100% of the unpaid tax [1.56].",
+    "cited": [
+     "1.56"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.56",
+     "1.38",
+     "1.55"
+    ],
+    "calls": 1,
+    "tokens": 2203,
+    "tools": [],
+    "ms": 934,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n18",
+    "text": "You can’t deduct more than $25,000 of qualified tips paid to you in 2025 [8.19].",
+    "cited": [
+     "8.19"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "12.5",
+     "8.19",
+     "4.25",
+     "4.50",
+     "10.3"
+    ],
+    "calls": 1,
+    "tokens": 2254,
+    "tools": [],
+    "ms": 873,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n19",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "10.3",
+     "10.2",
+     "10.5",
+     "7.7",
+     "9.8"
+    ],
+    "calls": 1,
+    "tokens": 1935,
+    "tools": [],
+    "ms": 648,
+    "kind": "number",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "d01",
+    "text": "You must keep your records as long as they may be needed for the administration of any provision of the Internal Revenue Code, which generally means keeping records that support items shown on your return until the period of limitations for that return runs out [1.49]. \n\nThe periods of limitations are as follows:\n- If you file a return and situations (2), (3), and (4) do not apply, the period is 3 years [1.49].\n- If you don’t report income that you should and it is more than 25% of the gross income shown on your return, the period is 6 years [1.49].\n- If you file a fraudulent return, there is no limit [1.49].\n- If you don’t file a return, there is no limit [1.49].\n- If you file a claim for credit or refund after you filed your return, the period is the later of 3 years or 2 years after the tax was paid [1.49].\n- If you file a claim for a loss from worthless securities or bad debt deduction, the period is 7 years [1.49].\n\nFor property, you must keep records relating to the property until the period of limitations expires for the year in which you dispose of the property in a taxable disposition [1.49]. If you received property in a nontaxable exchange, you must keep the records on both the old and new property until the period of limitations expires for the year in which you dispose of the new property in a taxable disposition [1.49]. Additionally, if you receive a Form W-2, you should keep Copy C until you begin receiving social security benefits [1.47].",
+    "cited": [
+     "1.49",
+     "1.47"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.49",
+     "1.44",
+     "1.46",
+     "1.45",
+     "1.47"
+    ],
+    "calls": 1,
+    "tokens": 2483,
+    "tools": [],
+    "ms": 1308,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d02",
+    "text": "For a single filer, modified AGI must be less than $165,000 to contribute to a Roth IRA [9.38].",
+    "cited": [
+     "9.38"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.39",
+     "9.38",
+     "9.12"
+    ],
+    "calls": 1,
+    "tokens": 2929,
+    "tools": [],
+    "ms": 787,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d03",
+    "text": "An early distribution from a traditional IRA is subject to a 10% additional tax on the part of the distribution that you have to include in your gross income [9.32].",
+    "cited": [
+     "9.32"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.32",
+     "9.28",
+     "9.33",
+     "9.34"
+    ],
+    "calls": 1,
+    "tokens": 2343,
+    "tools": [],
+    "ms": 771,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d04",
+    "text": "In general, if the excess contributions for a year aren't withdrawn by the date your return for the year is due (including extensions), you are subject to a 6% tax [9.31]. You must pay the 6% tax each year on excess amounts that remain in your traditional IRA at the end of your tax year [9.31].",
+    "cited": [
+     "9.31"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.31",
+     "9.28",
+     "9.41"
+    ],
+    "calls": 1,
+    "tokens": 2267,
+    "tools": [],
+    "ms": 932,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d05",
+    "text": "You can get an automatic 6-month extension of time to file by filing a paper Form 4868, or by using IRS e-file (electronic filing) [1.21]. If you are a fiscal year taxpayer, you must file a paper Form 4868 [1.21]. You can also get an extension by paying part or all of your estimate of tax due by using a credit or debit card or by direct transfer from your bank account by phone or over the Internet, in which case you don't file Form 4868 [1.21].",
+    "cited": [
+     "1.21"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.21",
+     "1.20",
+     "1.22",
+     "1.19"
+    ],
+    "calls": 1,
+    "tokens": 2183,
+    "tools": [],
+    "ms": 1047,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d06",
+    "text": "Life insurance proceeds paid to you because of the death of the insured person are not taxable unless the policy was turned over to you for a price [8.6].",
+    "cited": [
+     "8.6"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "8.6",
+     "6.8",
+     "8.8",
+     "8.7",
+     "5.9"
+    ],
+    "calls": 1,
+    "tokens": 2118,
+    "tools": [],
+    "ms": 779,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d07",
+    "text": "You can deduct your gambling losses for the year on Schedule A (Form 1040), line 16, up to the amount of your gambling winnings [12.58]. You can't deduct gambling losses that are more than your winnings [12.58].",
+    "cited": [
+     "12.58"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "12.58",
+     "4.19",
+     "12.53",
+     "12.38",
+     "4.42"
+    ],
+    "calls": 1,
+    "tokens": 1375,
+    "tools": [],
+    "ms": 838,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d08",
+    "text": "The second estimated tax payment for 2026 is due on June 15 [4.27] [4.28].",
+    "cited": [
+     "4.27",
+     "4.28"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "4.27",
+     "4.36",
+     "4.25",
+     "4.28"
+    ],
+    "calls": 1,
+    "tokens": 2256,
+    "tools": [],
+    "ms": 750,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d09",
+    "text": "Generally, you must file your claim for a credit or refund within 3 years after the date you filed your original return or within 2 years after the date you paid the tax, whichever is later [1.54]. Returns filed before the due date (without regard to extensions) are considered filed on the due date [1.54]. These time periods are suspended while you are financially disabled [1.54].",
+    "cited": [
+     "1.54"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.54"
+    ],
+    "calls": 1,
+    "tokens": 2786,
+    "tools": [],
+    "ms": 1536,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d10",
+    "text": "To qualify as a student, your child must be, during some part of each of any 5 calendar months of the year:\n- A full-time student at a school that has a regular teaching staff and course of study, and a regularly enrolled student body at the school; or\n- A student taking a full-time, on-farm training course given by such a school, or by a state, county, or local government agency [3.9]. \n\nThe 5 calendar months do not have to be consecutive [3.9]. A full-time student is a student who is enrolled for the number of hours or courses the school considers to be full-time attendance [3.9].",
+    "cited": [
+     "3.9"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.9",
+     "3.7",
+     "3.14",
+     "3.15"
+    ],
+    "calls": 1,
+    "tokens": 2004,
+    "tools": [],
+    "ms": 1052,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d11",
+    "text": "The failure-to-file penalty is usually 5% for each month or part of a month that a return is late, but not more than 25% [1.56]. If your failure to file is due to fraud, the penalty is 15% for each month or part of a month that your return is late, up to a maximum of 75% [1.56].",
+    "cited": [
+     "1.56"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.56",
+     "1.55",
+     "1.38"
+    ],
+    "calls": 1,
+    "tokens": 2236,
+    "tools": [],
+    "ms": 1033,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c01",
+    "text": "Your child doesn't meet the age test because, at the end of the year, the child wasn't under age 19 [3.9]. Unless the child was permanently and totally disabled, you cannot claim them as a qualifying child [3.9].",
+    "cited": [
+     "3.9"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.9",
+     "3.13",
+     "3.15"
+    ],
+    "calls": 1,
+    "tokens": 2565,
+    "tools": [],
+    "ms": 820,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c02",
+    "text": "Yes, your paper return is filed on time if it is mailed in an envelope that is properly addressed, has enough postage, and is postmarked by the due date, and you use certain private delivery services designated by the IRS (such as FedEx) to meet the \"timely mailing treated as timely filing/paying\" rule. [1.19]",
+    "cited": [
+     "1.19"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.19",
+     "1.51",
+     "1.38",
+     "1.21"
+    ],
+    "calls": 1,
+    "tokens": 2771,
+    "tools": [],
+    "ms": 905,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c03",
+    "text": "Yes, if you can’t pay the full amount due with your return, you can ask to make monthly installment payments for the full or a partial amount [1.39]. You can apply for an installment agreement online at IRS.gov/OPA or use Form 9465 [1.39]. If your request is granted, you must pay a fee, and you will be charged interest and possibly a late payment penalty on the tax not paid by the return's due date [1.39].",
+    "cited": [
+     "1.39"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.39",
+     "1.36",
+     "4.33",
+     "4.28",
+     "12.19"
+    ],
+    "calls": 1,
+    "tokens": 1701,
+    "tools": [],
+    "ms": 980,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c04",
+    "text": "If you are due a refund, you may get interest on it, and the interest rates are adjusted quarterly [1.51]. \n- If the refund is made within 45 days after the due date of your return, no interest will be paid [1.51]. \n- If you file your return after the due date (including extensions), no interest will be paid if the refund is made within 45 days after the date you filed [1.51]. \n- If the refund isn’t made within this 45-day period, interest will be paid from the due date of the return or from the date you filed, whichever is later [1.51].",
+    "cited": [
+     "1.51"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.51",
+     "1.38",
+     "1.54",
+     "1.35",
+     "13.4"
+    ],
+    "calls": 1,
+    "tokens": 2635,
+    "tools": [],
+    "ms": 904,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c05",
+    "text": "Your standard deduction is $1,350 [10.8].",
+    "cited": [
+     "10.8"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "10.8",
+     "6.3",
+     "10.1"
+    ],
+    "calls": 1,
+    "tokens": 2650,
+    "tools": [],
+    "ms": 730,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c06",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "9.10",
+     "6.4",
+     "5.4"
+    ],
+    "calls": 1,
+    "tokens": 2636,
+    "tools": [],
+    "ms": 1873,
+    "kind": "colloquial",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "c07",
+    "text": "Your IRA contributions for 2025 are limited to $3,500, the amount of your compensation [9.6].",
+    "cited": [
+     "9.6"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.6",
+     "9.12",
+     "9.39",
+     "9.4"
+    ],
+    "calls": 1,
+    "tokens": 2762,
+    "tools": [],
+    "ms": 971,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c08",
+    "text": "If you reach age 72 after December 31, 2022, you must begin receiving your required minimum distributions by April 1 of the year following the year you reach age 73 [9.25].",
+    "cited": [
+     "9.25"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.25",
+     "9.24",
+     "9.33",
+     "9.19",
+     "9.32"
+    ],
+    "calls": 1,
+    "tokens": 2814,
+    "tools": [],
+    "ms": 902,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c09",
+    "text": "If you are blind on the last day of the year and you don't itemize deductions, you are entitled to a higher standard deduction [10.4].",
+    "cited": [
+     "10.4"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "10.4",
+     "10.2",
+     "10.10",
+     "10.5",
+     "10.1"
+    ],
+    "calls": 1,
+    "tokens": 2063,
+    "tools": [],
+    "ms": 1255,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c10",
+    "text": "If your employer provides you with a qualified transportation fringe benefit, such as a transit pass, it can be excluded from your income, up to certain limits [5.11]. The exclusion for transit pass fringe benefits can’t be more than $325 a month [5.11]. If the benefits have a value that is more than this limit, the excess must be included in your income [5.11].",
+    "cited": [
+     "5.11"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "5.11",
+     "4.16",
+     "4.24",
+     "8.19",
+     "4.15"
+    ],
+    "calls": 1,
+    "tokens": 2069,
+    "tools": [],
+    "ms": 802,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c11",
+    "text": "Yes, an exemption is good for only 1 year [4.12]. You must generally give your employer a new Form W-4 by February 15 each year to continue your exemption [4.12].",
+    "cited": [
+     "4.12"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "4.12",
+     "4.24",
+     "4.14",
+     "4.40"
+    ],
+    "calls": 1,
+    "tokens": 1665,
+    "tools": [],
+    "ms": 762,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c12",
+    "text": "No, you cannot just not report anything. You must report the full amount of your gambling winnings for the year on Schedule 1 (Form 1040), line 8b [12.58] [8.19]. You cannot reduce your gambling winnings by your gambling losses and report the difference [12.58]. Instead, you must report the full amount of your winnings as income and, if you itemize your deductions, you can claim your losses on Schedule A (Form 1040), line 16, up to the amount of your winnings [12.58] [8.19].",
+    "cited": [
+     "12.58",
+     "8.19"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "4.19",
+     "12.58",
+     "4.42",
+     "8.19"
+    ],
+    "calls": 1,
+    "tokens": 2225,
+    "tools": [],
+    "ms": 1052,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c13",
+    "text": "To meet the age test to be a qualifying child, a student must be under age 24 at the end of the year and younger than you (or your spouse if filing jointly) [3.9]. To qualify as a student, she must be a full-time student during some part of each of any 5 calendar months of the year at a school that has a regular teaching staff and course of study, and a regularly enrolled student body (which includes a college) [3.9]. Additionally, she must meet the relationship, residency, support, and joint return tests [3.13].",
+    "cited": [
+     "3.9",
+     "3.13"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.9",
+     "3.13"
+    ],
+    "calls": 1,
+    "tokens": 2693,
+    "tools": [],
+    "ms": 959,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c14",
+    "text": "Yes, if an amount is contributed to your traditional IRA between January 1 and April 15, you should tell the sponsor which year (the current year or the previous year) the contribution is for [9.7].",
+    "cited": [
+     "9.7"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.40",
+     "9.7",
+     "9.41",
+     "9.10",
+     "9.39"
+    ],
+    "calls": 1,
+    "tokens": 1907,
+    "tools": [],
+    "ms": 959,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c15",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "3.18",
+     "3.13",
+     "3.2"
+    ],
+    "calls": 1,
+    "tokens": 2792,
+    "tools": [],
+    "ms": 911,
+    "kind": "colloquial",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "c16",
+    "text": "Yes, all unemployment compensation is taxable, and you must include in income all unemployment compensation you receive [8.17] [4.20].",
+    "cited": [
+     "8.17",
+     "4.20"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "8.17",
+     "4.20",
+     "7.7",
+     "4.24"
+    ],
+    "calls": 1,
+    "tokens": 2295,
+    "tools": [],
+    "ms": 679,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c17",
+    "text": "You must include your tips on your tax return on the same line as your regular pay. [4.15]",
+    "cited": [
+     "4.15"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "4.15",
+     "4.2",
+     "4.37",
+     "8.5",
+     "1.27"
+    ],
+    "calls": 1,
+    "tokens": 1530,
+    "tools": [],
+    "ms": 883,
+    "kind": "colloquial",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c18",
+    "text": "You may be able to file your 2025 return as a qualifying surviving spouse if you meet all of the eligibility rules [2.14]. Specifically, for 2025:\n- Your spouse died in 2023 or 2024 and you didn't remarry before the end of 2025 [2.14].\n- You were entitled to file a joint return with your spouse for the year your spouse died [2.14].\n- You have a child or stepchild (not a foster child) whom you can claim as a dependent or could claim as a dependent except that the child had gross income of $5,200 or more, filed a joint return, or could be claimed as a dependent on someone else's return [2.14].\n- This child lived in your home all year (with exceptions for temporary absences, birth, death, adoption, or kidnapping) [2.14].\n- You paid more than half of the cost of keeping up a home for the year [2.14].\n\nAfter 2025, you can file as head of household if you qualify [2.14].",
+    "cited": [
+     "2.14"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "2.14",
+     "2.3",
+     "2.4",
+     "2.2"
+    ],
+    "calls": 1,
+    "tokens": 2755,
+    "tools": [],
+    "ms": 1326,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c19",
+    "text": "No, you cannot use the child to claim the Child Tax Credit (CTC) or Additional Child Tax Credit (ACTC) because the child was not under age 17 at the end of 2025 [14.5]. If your child is age 17 or older at the end of 2025, you can see the Credit for Other Dependents (ODC) [14.5].",
+    "cited": [
+     "14.5"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "14.5",
+     "14.4",
+     "14.1",
+     "14.6"
+    ],
+    "calls": 1,
+    "tokens": 1733,
+    "tools": [],
+    "ms": 962,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c20",
+    "text": "Yes, you can move money from one IRA to another without paying tax through a trustee-to-trustee transfer, a tax-free rollover by reinvesting withdrawn assets within 60 days, or a transfer incident to a divorce [9.16] [9.17] [9.19] [9.21] [9.44].",
+    "cited": [
+     "9.16",
+     "9.17",
+     "9.19",
+     "9.21",
+     "9.44"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.17",
+     "9.16",
+     "9.19",
+     "9.21",
+     "9.44"
+    ],
+    "calls": 1,
+    "tokens": 1498,
+    "tools": [],
+    "ms": 856,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m01",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "2.13",
+     "3.13"
+    ],
+    "calls": 1,
+    "tokens": 2833,
+    "tools": [],
+    "ms": 813,
+    "kind": "multi-hop",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "m02",
+    "text": "The maximum amount you can claim for the child tax credit (CTC) is $2,200 for each child who qualifies you for the credit [14.4]. The credit amount of your CTC may be reduced if your modified adjusted gross income (AGI) is more than $400,000 for married filing jointly [14.10].",
+    "cited": [
+     "14.4",
+     "14.10"
+    ],
+    "dropped": [
+     "1.4"
+    ],
+    "refused": false,
+    "seen": [
+     "14.10",
+     "14.1",
+     "14.4",
+     "2.7",
+     "3.13"
+    ],
+    "calls": 1,
+    "tokens": 1879,
+    "tools": [],
+    "ms": 830,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m03",
+    "text": "If distributions are less than the required minimum distribution for the year, you may have to pay a 25% excise tax for that year on the amount not distributed as required [9.33]. (There is also an additional reduction to 10% for taxpayers meeting additional requirements) [9.33]. \n\nIf the excess accumulation is due to reasonable error, and you have taken, or are taking, steps to remedy the insufficient distribution, you can request that the tax be waived [9.33]. To request a waiver, attach a statement of explanation and complete Form 5329 as instructed under Waiver of tax for reasonable cause in the Instructions for Form 5329 [9.33].",
+    "cited": [
+     "9.33"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.33",
+     "9.25",
+     "9.24",
+     "9.20"
+    ],
+    "calls": 1,
+    "tokens": 2519,
+    "tools": [],
+    "ms": 993,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m04",
+    "text": "You can have the IRS figure your tax for you on Form 1040 or 1040-SR if you file by the due date of your return (April 15, 2026, for most people), and if you didn't pay enough, you will receive a bill for the balance. [13.4] \nHowever, the IRS can't figure your tax for you if your taxable income is $100,000 or more, or if any of several other conditions apply. [13.4]",
+    "cited": [
+     "13.4"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.36",
+     "13.4",
+     "12.19",
+     "1.39",
+     "1.37"
+    ],
+    "calls": 1,
+    "tokens": 1769,
+    "tools": [],
+    "ms": 937,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m05",
+    "text": "Two or more persons, each of whom would be able to claim your father as a dependent but for the support test, can together provide more than half of his support [3.21]. When this happens, you can agree that any one of you who individually provides more than 10% of his support, but only one, can claim him as a dependent [3.21]. \n\nTo do this:\n- Each of the other persons who provided more than 10% support must sign a statement agreeing not to claim your father as a dependent for that year [3.21].\n- The person who claims your father as a dependent must keep these signed statements for their own records [3.21].\n- A multiple support declaration identifying each of the others who agreed not to claim your father as a dependent (Form 2120 can be used for this purpose) must be attached to the return of the person claiming him [3.21].",
+    "cited": [
+     "3.21"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.18",
+     "3.11",
+     "3.21"
+    ],
+    "calls": 1,
+    "tokens": 3036,
+    "tools": [],
+    "ms": 5398,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m06",
+    "text": "If you are due a refund, you may get interest on it, with the interest rates adjusted quarterly [1.51]. No interest will be paid if the refund is made within 45 days after the due date of your return (or within 45 days after the date you filed, if you file after the due date including extensions); otherwise, interest will be paid from the due date of the return or the date you filed, whichever is later [1.51]. \n\nGenerally, you must file your claim for a credit or refund within 3 years after the date you filed your original return or within 2 years after the date you paid the tax, whichever is later [1.54].",
+    "cited": [
+     "1.51",
+     "1.54"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.51",
+     "1.54"
+    ],
+    "calls": 1,
+    "tokens": 2685,
+    "tools": [],
+    "ms": 1040,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m07",
+    "text": "If your child is age 17 or older at the end of 2025, you can see the Credit for Other Dependents (ODC) [14.5]. The maximum amount you can claim for the ODC is $500 for each qualifying dependent [14.7].",
+    "cited": [
+     "14.5",
+     "14.7"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "14.4",
+     "14.7",
+     "14.5",
+     "14.12",
+     "14.1"
+    ],
+    "calls": 1,
+    "tokens": 1576,
+    "tools": [],
+    "ms": 855,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m08",
+    "text": "To qualify to file as a qualifying surviving spouse for 2025, you must meet all of the following tests:\n- You were entitled to file a joint return with your spouse for the year your spouse died (it doesn't matter whether you actually filed one) [2.14].\n- Your spouse died in 2023 or 2024 and you didn't remarry before the end of 2025 [2.14].\n- You have a child or stepchild (not a foster child) whom you can claim as a dependent or could claim as a dependent except that, for 2025: (a) the child had gross income of $5,200 or more, (b) the child filed a joint return, or (c) you could be claimed as a dependent on someone else’s return [2.14].\n- The child lived in your home all year, except for temporary absences (with exceptions for a child born or died during the year, an adopted child, or a kidnapped child) [2.14].\n- You paid more than half of the cost of keeping up a home for the year [2.14].\n\nYou can determine whether you paid more than half of the cost of keeping up a home by using Worksheet 2-1 [2.12]. You include expenses such as rent, mortgage interest, real estate taxes, insurance on the home, repairs, utilities, and food eaten in the home [2.12]. You do not include the costs of clothing, education, medical treatment, vacations, life insurance, or transportation, nor the value of your services or those of a member of your household [2.12]. If the total amount you paid is more than the amount others paid, you meet the requirement [2.12].",
+    "cited": [
+     "2.14",
+     "2.12"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "2.12",
+     "2.14",
+     "2.10",
+     "2.13"
+    ],
+    "calls": 1,
+    "tokens": 2855,
+    "tools": [],
+    "ms": 1723,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m09",
+    "text": "If you had to repay an amount that you included in your income in an earlier year, you may be able to deduct the amount repaid from your income for the year in which you repaid it, or, if the amount repaid is more than $3,000, you may be able to take a credit against your tax for the year in which you repaid it [8.15]. \n\nGenerally, you can claim a deduction or credit only if the repayment qualifies as an expense or loss incurred in your trade or business or in a for-profit transaction [8.15]. If the amount repaid was $3,000 or less, you are no longer able to deduct it from your income because you can no longer claim any miscellaneous itemized deductions [8.15]. If the amount repaid was more than $3,000 and you included the income under a claim of right, you can deduct the repayment as an other itemized deduction on Schedule A (Form 1040), line 16, or you can choose to take a credit for the year of repayment by figuring your tax under both methods and using the one that results in less tax [8.15] [12.60].",
+    "cited": [
+     "8.15",
+     "12.60"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "12.19",
+     "8.15",
+     "12.60",
+     "11.5"
+    ],
+    "calls": 1,
+    "tokens": 1937,
+    "tools": [],
+    "ms": 6534,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m10",
+    "text": "You can claim exemption from withholding for 2026 only if both of the following situations apply: for 2025, you had a right to a refund of all federal income tax withheld because you had no tax liability, and for 2026, you expect a refund of all federal income tax withheld because you expect to have no tax liability [4.12]. To claim exemption, you must give your employer a Form W-4, writing \"Exempt\" on the form in the space below Step 4(c) and completing the applicable steps of the form [4.12]. \n\nAn exemption is good for only 1 year [4.12].",
+    "cited": [
+     "4.12"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "4.24",
+     "4.12",
+     "4.11",
+     "4.10"
+    ],
+    "calls": 1,
+    "tokens": 1918,
+    "tools": [],
+    "ms": 1096,
+    "kind": "multi-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m11",
+    "text": "Amounts that must be distributed during a particular year under the required minimum distribution rules aren't eligible for rollover treatment [9.19]. \n\nYou must generally start receiving distributions from your traditional IRA by April 1 of the year following the year in which you reach age 73 [9.25].",
+    "cited": [
+     "9.19",
+     "9.25"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.25",
+     "9.19",
+     "9.20",
+     "9.18"
+    ],
+    "calls": 1,
+    "tokens": 2965,
+    "tools": [],
+    "ms": 927,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m12",
+    "text": "If you apply for an ITIN on or before the due date of your 2025 return (including extensions) and the IRS issues you an ITIN as a result of the application, the IRS will consider your ITIN as issued on or before the due date of your return [14.2].",
+    "cited": [
+     "14.2"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "14.9",
+     "14.2",
+     "3.23",
+     "1.28"
+    ],
+    "calls": 1,
+    "tokens": 1812,
+    "tools": [],
+    "ms": 1660,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m13",
+    "text": "The standard deduction for a decedent's final tax return is the same as it would have been had the decedent continued to live, except that if the decedent wasn't 65 or older at the time of death, the higher standard deduction for age can't be claimed [10.2]. Because your father died at age 60, he is not considered 65 or older [10.3], and his standard deduction as a single taxpayer is $15,750 [10.10].",
+    "cited": [
+     "10.2",
+     "10.3",
+     "10.10"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "10.3",
+     "10.2",
+     "10.5",
+     "10.10"
+    ],
+    "calls": 1,
+    "tokens": 2221,
+    "tools": [],
+    "ms": 2053,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h02",
+    "text": "If your child doesn't have the required SSN issued before the due date of your 2025 return (including extensions), you can't use the child to claim the Child Tax Credit (CTC) or Additional Child Tax Credit (ACTC) on either your original or amended 2025 tax return [14.6]. However, if your qualifying child doesn't have the required SSN but has another type of TIN issued on or before the due date of your 2025 return (including extensions), you may be able to claim the Credit for Other Dependents (ODC) for that child [14.2].",
+    "cited": [
+     "14.6",
+     "14.2"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "14.6",
+     "14.9",
+     "14.2",
+     "1.28"
+    ],
+    "calls": 1,
+    "tokens": 2073,
+    "tools": [],
+    "ms": 1207,
+    "kind": "hard-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h03",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "3.14",
+     "2.13",
+     "3.18",
+     "14.10"
+    ],
+    "calls": 1,
+    "tokens": 2157,
+    "tools": [],
+    "ms": 713,
+    "kind": "hard-hop",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "h04",
+    "text": "Estimated tax is used to pay tax on income that isn’t subject to withholding, including self-employment income [4.23]. You do not have to make estimated tax payments until you have income on which you will owe income tax [4.28]. \n\nYou don’t have to pay estimated tax for 2026 if you meet all three of the following conditions:\n- You had no tax liability for 2025 (your total tax was zero or you didn’t have to file an income tax return). [4.24]\n- You were a U.S. citizen or resident alien for the whole year. [4.24]\n- Your 2025 tax year covered a 12-month period. [4.24]\n\nYou also don’t have to pay estimated tax if you will pay enough through withholding to keep the amount you owe with your return under $1,000 [4.30].\n\nIf you are required to make estimated tax payments, your general due dates depend on when you first have income on which you must pay estimated tax:\n- **Before April 1:** Make installments by April 15, June 15, Sept. 15, and Jan. 15 of the next year. [4.28]\n- **April 1–May 31:** Make installments by June 15, Sept. 15, and Jan. 15 of the next year. [4.28]\n- **June 1–Aug. 31:** Make installments by Sept. 15 and Jan. 15 of the next year. [4.28]\n- **After Aug. 31:** Make the installment by Jan. 15 of the next year. [4.28]",
+    "cited": [
+     "4.23",
+     "4.28",
+     "4.24",
+     "4.30"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "4.28",
+     "4.23",
+     "4.30",
+     "4.24",
+     "4.29"
+    ],
+    "calls": 1,
+    "tokens": 2018,
+    "tools": [],
+    "ms": 3649,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h05",
+    "text": "For information on how to deduct your repayments of certain social security benefits, see Repayments More Than Gross Benefits in chapter 7 [12.20]. \n\nIf you had to repay social security benefits or equivalent railroad retirement benefits, see Repayment of benefits in chapter 7 [8.15]. If you received a lump-sum payment from the SSA or RRB, and you had to repay the employer or insurance company for disability payments you included as income in an earlier year, you can take an itemized deduction for the part of the payments you included in gross income in the earlier year, or claim a tax credit instead if the amount you repay is more than $3,000 [7.6].",
+    "cited": [
+     "12.20",
+     "8.15",
+     "7.6"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "8.15",
+     "7.6",
+     "12.20",
+     "12.19"
+    ],
+    "calls": 1,
+    "tokens": 1819,
+    "tools": [],
+    "ms": 1102,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h06",
+    "text": "For purposes of the gross income test, the gross income of an individual who is permanently and totally disabled at any time during the year doesn't include income for services the individual performs at a sheltered workshop [3.17]. The publication does not provide a definition for \"permanently and totally disabled\" in the provided sections, noting only that it has the same meaning as under Qualifying Child, earlier [3.17].",
+    "cited": [
+     "3.17"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.17",
+     "1.10",
+     "3.11",
+     "2.13",
+     "8.19"
+    ],
+    "calls": 1,
+    "tokens": 2781,
+    "tools": [],
+    "ms": 861,
+    "kind": "hard-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h07",
+    "text": "Yes, you have no income from the canceled debt if it is intended as a gift to you [8.3]. The publication doesn't cover any other ways to avoid tax on it.",
+    "cited": [
+     "8.3"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "8.3",
+     "1.56",
+     "1.39",
+     "6.4",
+     "4.44"
+    ],
+    "calls": 1,
+    "tokens": 2151,
+    "tools": [],
+    "ms": 6372,
+    "kind": "hard-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "o01",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "4.40",
+     "8.2",
+     "4.50",
+     "1.19",
+     "6.11"
+    ],
+    "calls": 1,
+    "tokens": 1802,
+    "tools": [],
+    "ms": 695,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o02",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "12.60",
+     "9.8",
+     "8.12",
+     "12.19",
+     "11.9"
+    ],
+    "calls": 1,
+    "tokens": 1882,
+    "tools": [],
+    "ms": 713,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o03",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "14.4",
+     "14.7",
+     "3.13",
+     "14.1",
+     "3.19"
+    ],
+    "calls": 1,
+    "tokens": 1489,
+    "tools": [],
+    "ms": 904,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o04",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "11.4",
+     "11.8",
+     "11.7",
+     "1.3"
+    ],
+    "calls": 1,
+    "tokens": 2197,
+    "tools": [],
+    "ms": 691,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o05",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "10.3",
+     "10.2",
+     "10.10",
+     "10.7"
+    ],
+    "calls": 1,
+    "tokens": 2038,
+    "tools": [],
+    "ms": 765,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o06",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "12.60",
+     "12.33",
+     "12.5",
+     "12.6",
+     "12.59"
+    ],
+    "calls": 1,
+    "tokens": 981,
+    "tools": [],
+    "ms": 696,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o07",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "8.14",
+     "11.12",
+     "11.9",
+     "11.8",
+     "12.55"
+    ],
+    "calls": 1,
+    "tokens": 1848,
+    "tools": [],
+    "ms": 694,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o08",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "8.11",
+     "11.1",
+     "6.2",
+     "4.25",
+     "14.10"
+    ],
+    "calls": 1,
+    "tokens": 2040,
+    "tools": [],
+    "ms": 766,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o09",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "1.3",
+     "1.12",
+     "1.5",
+     "1.2",
+     "13.5"
+    ],
+    "calls": 1,
+    "tokens": 1776,
+    "tools": [],
+    "ms": 900,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o10",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "12.5",
+     "4.50",
+     "8.4",
+     "10.3",
+     "9.6"
+    ],
+    "calls": 1,
+    "tokens": 2136,
+    "tools": [],
+    "ms": 703,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o11",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "5.16",
+     "9.8",
+     "5.20",
+     "12.60",
+     "8.5"
+    ],
+    "calls": 1,
+    "tokens": 1704,
+    "tools": [],
+    "ms": 1389,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   }
+  ],
+  "agent": [
+   {
+    "id": "n01",
+    "text": "April 15, 2026, is the due date for filing your 2025 income tax return if you use the calendar year [1.19]. If you are a U.S. citizen or resident outside the United States who files on a calendar year basis and no extension is requested, the due date is June 15, 2026 [1.19]. If you use a fiscal year, your income tax return is due by the 15th day of the 4th month after the close of your fiscal year [1.19]. When the due date falls on a Saturday, Sunday, or legal holiday, the due date is delayed until the next business day [1.19]. \n\nFor nonresident aliens, the due date depends on whether wages subject to U.S. income tax withholding are earned:\n- If you earn wages subject to U.S. income tax withholding, your return is due by April 15, 2026 (for a calendar year) or the 15th day of the 4th month after the end of your fiscal year [1.19].\n- If you do not earn wages subject to U.S. income tax withholding, your return is due by June 15, 2026 (for a calendar year) or the 15th day of the 6th month after the end of your fiscal year [1.19].\n\nIf you file a final income tax return for a decedent, the return is due by the 15th day of the 4th month after the end of the decedent's normal tax year [1.19].\n\nYou may also be able to get an automatic 6-month extension of time to file (until October 15, 2026, for calendar year returns) [1.21].",
+    "cited": [
+     "1.19",
+     "1.21"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.19",
+     "4.40",
+     "1.50",
+     "1.21"
+    ],
+    "calls": 1,
+    "tokens": 2810,
+    "tools": [],
+    "ms": 1671,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n02",
+    "text": "If you get the automatic extension, you have until October 15, 2026, to file your 2025 return [1.21] [1.19].",
+    "cited": [
+     "1.21",
+     "1.19"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.21",
+     "1.22",
+     "1.19"
+    ],
+    "calls": 1,
+    "tokens": 2675,
+    "tools": [],
+    "ms": 841,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n03",
+    "text": "The standard deduction for a single filer for 2025 is $15,750 [10.10].",
+    "cited": [
+     "10.10"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "10.10",
+     "10.3",
+     "10.2",
+     "10.7"
+    ],
+    "calls": 1,
+    "tokens": 2394,
+    "tools": [],
+    "ms": 2052,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n04",
+    "text": "For married filing jointly, the standard deduction is $31,500 in 2025 [10.10].",
+    "cited": [
+     "10.10"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "10.10",
+     "10.7",
+     "10.5",
+     "12.5"
+    ],
+    "calls": 1,
+    "tokens": 2498,
+    "tools": [],
+    "ms": 5484,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n05",
+    "text": "The standard deduction for a head of household is $23,625 [10.10].",
+    "cited": [
+     "10.10"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "10.1",
+     "10.10",
+     "10.8",
+     "10.2"
+    ],
+    "calls": 1,
+    "tokens": 2943,
+    "tools": [],
+    "ms": 3629,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n06",
+    "text": "If you are a single person who is age 65 or older (born before January 2, 1961) and cannot be claimed as a dependent by another taxpayer, your standard deduction is $17,750 [10.3] [10.10].",
+    "cited": [
+     "10.3",
+     "10.10"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "10.3",
+     "10.2",
+     "10.5",
+     "10.7",
+     "10.8",
+     "10.10"
+    ],
+    "calls": 2,
+    "tokens": 6303,
+    "tools": [
+     {
+      "name": "search_publication",
+      "args": {
+       "query": "standard deduction 65 or older single table 10-2"
+      }
+     }
+    ],
+    "ms": 7783,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n07",
+    "text": "For 2025, the most that can be contributed to your traditional IRA is generally the smaller of the following amounts:\n- $7,000 ($8,000 if you are 50 or older).\n- Your taxable compensation for the year. [9.6]",
+    "cited": [
+     "9.6"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.6",
+     "9.12",
+     "9.39",
+     "9.40"
+    ],
+    "calls": 1,
+    "tokens": 2667,
+    "tools": [],
+    "ms": 946,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n08",
+    "text": "For 2025, if contributions are made only to Roth IRAs, the contribution limit is generally up to $8,000 if you are 50 or older, provided your modified AGI is below the amount that reduces or eliminates your contribution limit [9.39].",
+    "cited": [
+     "9.39"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.6",
+     "9.39",
+     "9.40"
+    ],
+    "calls": 1,
+    "tokens": 2732,
+    "tools": [],
+    "ms": 1118,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n09",
+    "text": "The maximum amount you can claim for the Child Tax Credit (CTC) is $2,200 for each child who qualifies you for the credit [14.4].",
+    "cited": [
+     "14.4"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "14.4",
+     "14.7",
+     "14.1",
+     "14.5"
+    ],
+    "calls": 1,
+    "tokens": 1919,
+    "tools": [],
+    "ms": 841,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n10",
+    "text": "The maximum amount you can claim for the credit for other dependents is $500 for each qualifying dependent [14.7] [14.1].",
+    "cited": [
+     "14.7",
+     "14.1"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "14.7",
+     "14.4",
+     "14.1",
+     "14.8",
+     "14.11"
+    ],
+    "calls": 1,
+    "tokens": 1769,
+    "tools": [],
+    "ms": 996,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n11",
+    "text": "To meet the gross income test for a qualifying relative, a person's gross income for the year must be less than $5,200 [3.17].",
+    "cited": [
+     "3.17"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.17",
+     "14.10",
+     "4.25",
+     "4.50",
+     "3.14"
+    ],
+    "calls": 1,
+    "tokens": 2470,
+    "tools": [],
+    "ms": 1257,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n12",
+    "text": "The deduction for state and local taxes is limited to $40,000 ($20,000 if married filing separately) [11.12]. The overall limit is reduced if your modified adjusted gross income is more than $500,000 ($250,000 if married filing separately) but will not be reduced below $10,000 ($5,000 if married filing separately) [11.12].",
+    "cited": [
+     "11.12"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "11.4",
+     "11.8",
+     "11.12",
+     "11.7",
+     "11.5"
+    ],
+    "calls": 1,
+    "tokens": 2847,
+    "tools": [],
+    "ms": 1148,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n13",
+    "text": "An eligible educator can deduct up to $300 of qualified expenses paid in 2025 as an adjustment to gross income on Schedule 1 (Form 1040), line 11 [12.5]. If filing jointly and both spouses are eligible educators, the maximum deduction is $600, with neither spouse deducting more than $300 of their qualified expenses [12.5].",
+    "cited": [
+     "12.5"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "12.5",
+     "5.8",
+     "8.19",
+     "12.60",
+     "12.4"
+    ],
+    "calls": 1,
+    "tokens": 1990,
+    "tools": [],
+    "ms": 1266,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n14",
+    "text": "The exclusion limit for the qualified parking fringe benefit can't be more than $325 a month [5.11].",
+    "cited": [
+     "5.11"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "5.11",
+     "5.12",
+     "5.3",
+     "9.12",
+     "8.19"
+    ],
+    "calls": 1,
+    "tokens": 3224,
+    "tools": [],
+    "ms": 1066,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n15",
+    "text": "You must file Form 1040 or 1040-SR and Schedule SE (Form 1040) if your net earnings from self-employment (excluding church employee income) were $400 or more [1.10].",
+    "cited": [
+     "1.10"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.10",
+     "1.3"
+    ],
+    "calls": 1,
+    "tokens": 3248,
+    "tools": [],
+    "ms": 1336,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n16",
+    "text": "In most cases, the cost of up to $50,000 of group-term life insurance coverage provided to you by your employer (or former employer) isn’t included in your income [5.9].",
+    "cited": [
+     "5.9"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "5.9",
+     "5.12"
+    ],
+    "calls": 1,
+    "tokens": 3186,
+    "tools": [],
+    "ms": 2160,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n17",
+    "text": "If you file your return more than 60 days after the due date, or extended due date, the minimum penalty is the smaller of $525 or 100% of the unpaid tax [1.56].",
+    "cited": [
+     "1.56"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.56",
+     "1.38",
+     "1.55"
+    ],
+    "calls": 1,
+    "tokens": 2551,
+    "tools": [],
+    "ms": 1137,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n18",
+    "text": "You can’t deduct more than $25,000 of qualified tips paid to you in 2025 [8.19].",
+    "cited": [
+     "8.19"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "12.5",
+     "8.19",
+     "4.25",
+     "4.50",
+     "10.3"
+    ],
+    "calls": 1,
+    "tokens": 2626,
+    "tools": [],
+    "ms": 975,
+    "kind": "number",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "n19",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "10.3",
+     "10.2",
+     "10.5",
+     "7.7",
+     "9.8",
+     "10.7",
+     "10.10"
+    ],
+    "calls": 2,
+    "tokens": 6262,
+    "tools": [
+     {
+      "name": "search_publication",
+      "args": {
+       "query": "higher standard deduction amount age 65 or older Table 10-2"
+      }
+     }
+    ],
+    "ms": 13210,
+    "kind": "number",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "d01",
+    "text": "Generally, you must keep records that support items shown on your return until the period of limitations for that return runs out [1.49]. The period of limitations depends on the specific situation:\n- If you file a return and no other special rules apply, the period is **3 years** [1.49].\n- If you don't report income that you should and it is more than 25% of the gross income shown on your return, the period is **6 years** [1.49].\n- If you file a fraudulent return, there is **no limit** [1.49].\n- If you don't file a return, there is **no limit** [1.49].\n- If you file a claim for credit or refund after you filed your return, the period is the later of **3 years or 2 years after tax was paid** [1.49].\n- If you file a claim for a loss from worthless securities or bad debt deduction, the period is **7 years** [1.49].\n\nFor property, you must keep records relating to property until the period of limitations expires for the year in which you dispose of the property in a taxable disposition [1.49]. If you received property in a nontaxable exchange, you must keep the records on the old property, as well as the new property, until the period of limitations expires for the year in which you dispose of the new property in a taxable disposition [1.49]. Additionally, if you receive a Form W-2, you should keep Copy C until you begin receiving social security benefits [1.47].",
+    "cited": [
+     "1.49",
+     "1.47"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.49",
+     "1.44",
+     "1.46",
+     "1.45",
+     "1.47"
+    ],
+    "calls": 1,
+    "tokens": 2769,
+    "tools": [],
+    "ms": 1689,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d02",
+    "text": "For a single filer, the modified AGI must be less than $165,000 to contribute to a Roth IRA [9.38]. If your modified AGI is $165,000 or more, you cannot contribute to a Roth IRA [9.39].",
+    "cited": [
+     "9.38",
+     "9.39"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.39",
+     "9.38",
+     "9.12"
+    ],
+    "calls": 1,
+    "tokens": 3312,
+    "tools": [],
+    "ms": 2955,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d03",
+    "text": "Generally, if you are under age 59½, you must pay a 10% additional tax on the distribution of any assets from your traditional IRA [9.32]. The additional tax is 10% of the amount of the early distribution that you must include in your gross income [9.32].",
+    "cited": [
+     "9.32"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.32",
+     "9.28",
+     "9.33",
+     "9.34"
+    ],
+    "calls": 1,
+    "tokens": 2749,
+    "tools": [],
+    "ms": 1090,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d04",
+    "text": "In general, if the excess contributions for a year aren't withdrawn by the date your return for the year is due (including extensions), you are subject to a 6% tax, which you must pay each year on excess amounts that remain in your traditional IRA at the end of your tax year [9.31]. This additional tax is figured on Form 5329 [9.31].",
+    "cited": [
+     "9.31"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.31",
+     "9.28",
+     "9.41"
+    ],
+    "calls": 1,
+    "tokens": 2633,
+    "tools": [],
+    "ms": 1233,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d05",
+    "text": "You can get an automatic 6-month extension of time to file by filing Form 4868 (or a paper Form 4868 if you are a fiscal year taxpayer) [1.21]. You can also get an extension without filing Form 4868 if you qualify for the automatic 2-month extension for individuals living outside the United States [1.22].",
+    "cited": [
+     "1.21",
+     "1.22"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.21",
+     "1.20",
+     "1.22",
+     "1.19"
+    ],
+    "calls": 1,
+    "tokens": 2498,
+    "tools": [],
+    "ms": 1791,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d06",
+    "text": "Life insurance proceeds paid to you because of the death of the insured person are not taxable unless the policy was turned over to you for a price [8.6]. This is true even if the proceeds were paid under an accident or health insurance policy or an endowment contract [8.6]. However, interest income received as a result of life insurance proceeds may be taxable [8.6].",
+    "cited": [
+     "8.6"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "8.6",
+     "6.8",
+     "8.8",
+     "8.7",
+     "5.9"
+    ],
+    "calls": 1,
+    "tokens": 2480,
+    "tools": [],
+    "ms": 1212,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d07",
+    "text": "Yes, you can deduct your gambling losses for the year on Schedule A (Form 1040), line 16, up to the amount of your gambling winnings [12.58]. You cannot deduct gambling losses that are more than your winnings, and you cannot reduce your gambling winnings by your gambling losses and report the difference [12.58].",
+    "cited": [
+     "12.58"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "12.58",
+     "4.19",
+     "12.53",
+     "12.38",
+     "4.42"
+    ],
+    "calls": 1,
+    "tokens": 1715,
+    "tools": [],
+    "ms": 1199,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d08",
+    "text": "The second estimated tax payment for 2026 is due on June 15 [4.27] [4.28].",
+    "cited": [
+     "4.27",
+     "4.28"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "4.27",
+     "4.36",
+     "4.25",
+     "4.28"
+    ],
+    "calls": 1,
+    "tokens": 2580,
+    "tools": [],
+    "ms": 1284,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d09",
+    "text": "Generally, you must file your claim for a credit or refund within 3 years after the date you filed your original return or within 2 years after the date you paid the tax, whichever is later [1.54].",
+    "cited": [
+     "1.54"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.54"
+    ],
+    "calls": 1,
+    "tokens": 3197,
+    "tools": [],
+    "ms": 1794,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d10",
+    "text": "To qualify as a student for the qualifying child age test, your child must be, during some part of each of any 5 calendar months of the year (which do not have to be consecutive):\n- A full-time student at a school that has a regular teaching staff and course of study, and a regularly enrolled student body at the school; or\n- A student taking a full-time, on-farm training course given by such a school, or by a state, county, or local government agency [3.9].\n\nA full-time student is a student who is enrolled for the number of hours or courses the school considers to be full-time attendance [3.9]. A school can be an elementary school; a junior or senior high school; a college; a university; or a technical, trade, or mechanical school (though an on-the-job training course, correspondence school, or school offering courses only through the Internet doesn’t count) [3.9]. Additionally, students who work on \"co-op\" jobs in private industry as a part of a school's regular course of classroom and practical training are considered full-time students [3.9].",
+    "cited": [
+     "3.9"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.9",
+     "3.7",
+     "3.14",
+     "3.15"
+    ],
+    "calls": 1,
+    "tokens": 2489,
+    "tools": [],
+    "ms": 1435,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "d11",
+    "text": "The failure-to-file penalty is usually 5% for each month or part of a month that a return is late, but not more than 25% [1.56]. If your failure to file is due to fraud, the penalty is 15% for each month or part of a month that your return is late, up to a maximum of 75% [1.56].",
+    "cited": [
+     "1.56"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.56",
+     "1.55",
+     "1.38"
+    ],
+    "calls": 1,
+    "tokens": 2584,
+    "tools": [],
+    "ms": 1037,
+    "kind": "direct",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c01",
+    "text": "To meet the age test to be a qualifying child, a child must be under age 19 at the end of the year and younger than you (or your spouse if filing jointly), a student under age 24 at the end of the year and younger than you (or your spouse if filing jointly), or permanently and totally disabled at any time during the year, regardless of age [3.9]. \n\nTherefore, if your child turned 19 in December, is not a student, and is not permanently and totally disabled, the child does not meet the age test and you cannot claim them as a qualifying child [3.9].",
+    "cited": [
+     "3.9"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.9",
+     "3.13",
+     "3.15"
+    ],
+    "calls": 1,
+    "tokens": 3001,
+    "tools": [],
+    "ms": 1440,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c02",
+    "text": "Your paper return is filed on time if it is mailed in an envelope that is properly addressed, has enough postage, and is postmarked by the due date, and you can use certain private delivery services designated by the IRS—such as FedEx First Overnight, FedEx Priority Overnight, FedEx Standard Overnight, FedEx 2 Day, FedEx International Next Flight Out, FedEx International Priority, FedEx International First, and FedEx International Economy—to meet this timely mailing rule [1.19].",
+    "cited": [
+     "1.19"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.19",
+     "1.51",
+     "1.38",
+     "1.21"
+    ],
+    "calls": 1,
+    "tokens": 3168,
+    "tools": [],
+    "ms": 1263,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c03",
+    "text": "Yes, if you can’t pay the full amount due with your return, you can ask to make monthly installment payments for the full or a partial amount [1.39]. To apply for an installment agreement online, go to IRS.gov/OPA, or you can use Form 9465 [1.39].",
+    "cited": [
+     "1.39"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.39",
+     "1.36",
+     "4.33",
+     "4.28",
+     "12.19"
+    ],
+    "calls": 1,
+    "tokens": 2032,
+    "tools": [],
+    "ms": 1284,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c04",
+    "text": "If you are due a refund, you may get interest on it [1.51]. The interest rates are adjusted quarterly [1.51]. \n\nNo interest will be paid under the following conditions:\n- If the refund is made within 45 days after the due date of your return [1.51].\n- If you file your return after the due date (including extensions) and the refund is made within 45 days after the date you filed [1.51].\n\nIf the refund isn’t made within this 45-day period, interest will be paid from the due date of the return or from the date you filed, whichever is later [1.51].",
+    "cited": [
+     "1.51"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.51",
+     "1.38",
+     "1.54",
+     "1.35",
+     "13.4"
+    ],
+    "calls": 1,
+    "tokens": 3015,
+    "tools": [],
+    "ms": 1650,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c05",
+    "text": "Your standard deduction is $1,350 [10.8].",
+    "cited": [
+     "10.8"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "10.8",
+     "6.3",
+     "10.1"
+    ],
+    "calls": 1,
+    "tokens": 3017,
+    "tools": [],
+    "ms": 1012,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c06",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "9.10",
+     "6.4",
+     "5.4"
+    ],
+    "calls": 1,
+    "tokens": 3009,
+    "tools": [],
+    "ms": 1904,
+    "kind": "colloquial",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "c07",
+    "text": "Your IRA contributions for 2025 are limited to $3,500, the amount of your compensation [9.6].",
+    "cited": [
+     "9.6"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.6",
+     "9.12",
+     "9.39",
+     "9.4"
+    ],
+    "calls": 1,
+    "tokens": 3128,
+    "tools": [],
+    "ms": 984,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c08",
+    "text": "If you are the owner of a traditional IRA, you must generally start receiving distributions from your IRA by April 1 of the year following the year in which you reach age 73 (referred to as the \"applicable required beginning date\"). [9.25]",
+    "cited": [
+     "9.25"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.25",
+     "9.24",
+     "9.33",
+     "9.19",
+     "9.32"
+    ],
+    "calls": 1,
+    "tokens": 3212,
+    "tools": [],
+    "ms": 1561,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c09",
+    "text": "If you are blind on the last day of the year and you don't itemize deductions, you are entitled to a higher standard deduction [10.4]. The standard deduction is higher for taxpayers who are blind [10.1].",
+    "cited": [
+     "10.4",
+     "10.1"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "10.4",
+     "10.2",
+     "10.10",
+     "10.5",
+     "10.1"
+    ],
+    "calls": 1,
+    "tokens": 2409,
+    "tools": [],
+    "ms": 914,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c10",
+    "text": "If your employer provides you with a qualified transportation fringe benefit such as a transit pass, it can be excluded from your income up to $325 a month [5.11]. If the benefit has a value greater than that limit, the excess must be included in your income [5.11].",
+    "cited": [
+     "5.11"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "5.11",
+     "4.16",
+     "4.24",
+     "8.19",
+     "4.15"
+    ],
+    "calls": 1,
+    "tokens": 2394,
+    "tools": [],
+    "ms": 1115,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c11",
+    "text": "Yes, an exemption is good for only 1 year [4.12]. You must generally give your employer a new Form W-4 by February 15 each year to continue your exemption [4.12].",
+    "cited": [
+     "4.12"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "4.12",
+     "4.24",
+     "4.14",
+     "4.40"
+    ],
+    "calls": 1,
+    "tokens": 1972,
+    "tools": [],
+    "ms": 1145,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c12",
+    "text": "No, you cannot just not report anything [12.58]. You must report the full amount of your gambling winnings for the year on Schedule 1 (Form 1040), line 8b [12.58]. You cannot reduce your gambling winnings by your gambling losses and report the difference [12.58]. Instead, you can deduct your gambling losses for the year on Schedule A (Form 1040), line 16, but only up to the amount of your winnings (you cannot deduct gambling losses that are more than your winnings) [12.58].",
+    "cited": [
+     "12.58"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "4.19",
+     "12.58",
+     "4.42",
+     "8.19"
+    ],
+    "calls": 1,
+    "tokens": 2608,
+    "tools": [],
+    "ms": 1132,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c13",
+    "text": "To meet the age test to be your qualifying child, a child must be a student under age 24 at the end of the year and younger than you (or your spouse if filing jointly) [3.9]. Assuming she meets this condition as well as the other qualifying child tests (relationship, residency, support, and joint return), she can still be your qualifying child [3.9] [3.13].",
+    "cited": [
+     "3.9",
+     "3.13"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.9",
+     "3.13"
+    ],
+    "calls": 1,
+    "tokens": 3011,
+    "tools": [],
+    "ms": 1226,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c14",
+    "text": "Yes, you can make contributions to your traditional IRA or Roth IRA between January 1 and April 15 for the previous tax year [9.7] [9.40]. \n\nFor a traditional IRA, if you make a contribution between January 1 and April 15, you should tell the sponsor (trustee or other administrator) which year (the current year or the previous year) the contribution is for [9.7]. If you do not tell the sponsor, they can assume and report to the IRS that the contribution is for the current year (the year they received it) [9.7].",
+    "cited": [
+     "9.7",
+     "9.40"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.40",
+     "9.7",
+     "9.41",
+     "9.10",
+     "9.39"
+    ],
+    "calls": 1,
+    "tokens": 2313,
+    "tools": [],
+    "ms": 1245,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c15",
+    "text": "When two or more persons together provide more than half of a person's support (and no one person provides more than half individually), any one of those persons who individually provides more than 10% of the support can claim that person as a dependent under a multiple support agreement [3.21]. \n\nTo claim your mom under a multiple support agreement:\n- Each of the other siblings who contributed more than 10% of the support must sign a statement agreeing not to claim your mom as a dependent for that year [3.21]. \n- The person claiming your mom must keep these signed statements for their own records and attach a multiple support declaration (such as Form 2120) identifying each of the others who agreed not to claim your mom to their tax return [3.21]. \n- Siblings who provide 10% or less of the support cannot claim your mom as a dependent and do not have to sign a statement [3.21].",
+    "cited": [
+     "3.21"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.18",
+     "3.13",
+     "3.2",
+     "3.21",
+     "3.11",
+     "3.14",
+     "3.22"
+    ],
+    "calls": 2,
+    "tokens": 8671,
+    "tools": [
+     {
+      "name": "search_publication",
+      "args": {
+       "query": "multiple support agreement qualifying relative support test"
+      }
+     }
+    ],
+    "ms": 2459,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c16",
+    "text": "Yes, you must include in income all unemployment compensation you receive [8.17]. All unemployment compensation is taxable [4.20].",
+    "cited": [
+     "8.17",
+     "4.20"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "8.17",
+     "4.20",
+     "7.7",
+     "4.24"
+    ],
+    "calls": 1,
+    "tokens": 2659,
+    "tools": [],
+    "ms": 1602,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c17",
+    "text": "Yes, you must include your tips on your tax return on the same line as your regular pay [4.15].",
+    "cited": [
+     "4.15"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "4.15",
+     "4.2",
+     "4.37",
+     "8.5",
+     "1.27"
+    ],
+    "calls": 1,
+    "tokens": 1848,
+    "tools": [],
+    "ms": 1101,
+    "kind": "colloquial",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c18",
+    "text": "You may be able to use qualifying surviving spouse as your filing status for 2025 if you haven't remarried before the end of 2025 and you meet all the eligibility rules, which include having a child or stepchild whom you can claim as a dependent (or could claim except for certain conditions like the child having gross income of $5,200 or more, filing a joint return, or being claimed on someone else's return), keeping up a home that was the child's main home for the year while paying more than half of its cost, and being entitled to file a joint return for the year your spouse died [2.14].",
+    "cited": [
+     "2.14"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "2.14",
+     "2.3",
+     "2.4",
+     "2.2"
+    ],
+    "calls": 1,
+    "tokens": 3042,
+    "tools": [],
+    "ms": 1670,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c19",
+    "text": "You cannot use the child to claim the Child Tax Credit (CTC) or Additional Child Tax Credit (ACTC) because the child was not under age 17 at the end of 2025 [14.5]. If your child is age 17 or older at the end of 2025, you may see the Credit for Other Dependents (ODC) [14.5].",
+    "cited": [
+     "14.5"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "14.5",
+     "14.4",
+     "14.1",
+     "14.6"
+    ],
+    "calls": 1,
+    "tokens": 2136,
+    "tools": [],
+    "ms": 1110,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "c20",
+    "text": "Yes, you can move money from one IRA to another without paying tax through the following methods:\n- **Trustee-to-trustee transfers:** A transfer of funds directly from one trustee to another (even if a check is issued to the new trustee but given to you to deposit) is tax free because there is no distribution to you [9.17]. Trustee-to-trustee transfers between IRAs are not limited [9.19].\n- **Rollovers:** You can withdraw all or part of the assets from one traditional or Roth IRA tax free if you reinvest or contribute them within 60 days into the same or another traditional or Roth IRA, subject to the limitation of making only one rollover from an IRA to another (or the same) IRA in any 1-year period (regardless of the number of IRAs you own) [9.19] [9.44].",
+    "cited": [
+     "9.17",
+     "9.19",
+     "9.44"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.17",
+     "9.16",
+     "9.19",
+     "9.21",
+     "9.44"
+    ],
+    "calls": 1,
+    "tokens": 1972,
+    "tools": [],
+    "ms": 1332,
+    "kind": "colloquial",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m01",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "2.13",
+     "3.13"
+    ],
+    "calls": 1,
+    "tokens": 3300,
+    "tools": [],
+    "ms": 1071,
+    "kind": "multi-hop",
+    "fact": false,
+    "refusal_right": false,
+    "cites_expected": false,
+    "found_expected": false
+   },
+   {
+    "id": "m02",
+    "text": "The Child Tax Credit (CTC) can reduce your tax by as much as $2,200 for each child who qualifies you for the credit [14.1] [14.4]. For married couples filing jointly, the credit amount may be reduced if your modified adjusted gross income (AGI) is more than $400,000 [14.10].",
+    "cited": [
+     "14.1",
+     "14.4",
+     "14.10"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "14.10",
+     "14.1",
+     "14.4",
+     "2.7",
+     "3.13"
+    ],
+    "calls": 1,
+    "tokens": 2243,
+    "tools": [],
+    "ms": 1114,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m03",
+    "text": "If distributions from your traditional IRA are less than the required minimum distribution for the year, you may have to pay a 25% excise tax for that year on the amount not distributed as required [9.33]. \n\nIf the excess accumulation is due to reasonable error, and you have taken, or are taking, steps to remedy the insufficient distribution, you can request that the tax be waived [9.33]. To request a waiver, attach a statement of explanation and complete Form 5329 as instructed under *Waiver of tax for reasonable cause* in the Instructions for Form 5329 [9.33].",
+    "cited": [
+     "9.33"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.33",
+     "9.25",
+     "9.24",
+     "9.20"
+    ],
+    "calls": 1,
+    "tokens": 2872,
+    "tools": [],
+    "ms": 1191,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m04",
+    "text": "You can have the IRS figure your tax for you on Form 1040 or 1040-SR if you file by the due date of your return (April 15, 2026, for most people) [13.4]. If you didn't pay enough, you will receive a bill for the balance [13.4]. \n\nThe IRS cannot figure your tax if your taxable income is $100,000 or more [13.4]. Additionally, several other conditions prevent the IRS from figuring your tax, such as if you itemize deductions, want your refund directly deposited or applied to 2026 estimated tax, had income from sources other than specific types (like wages, salaries, tips, interest, dividends, taxable social security benefits, unemployment compensation, IRA distributions, pensions, and annuities), or file certain forms [13.4].",
+    "cited": [
+     "13.4"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.36",
+     "13.4",
+     "12.19",
+     "1.39",
+     "1.37"
+    ],
+    "calls": 1,
+    "tokens": 2202,
+    "tools": [],
+    "ms": 6291,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m05",
+    "text": "To meet the support test when no one provides more than half of a person's support, two or more persons, each of whom would be able to claim the person as a dependent but for the support test, can together provide more than half of the person's support under a multiple support agreement [3.21]. \n\nWhen this happens, any one of you who individually provides more than 10% of the person's support can claim the person as a dependent, provided the following conditions are met:\n- Each of the other persons who provided more than 10% support must sign a statement agreeing not to claim the person as a dependent for that year [3.21].\n- The person who claims the dependent must keep these signed statements for their own records [3.21].\n- A multiple support declaration identifying each of the others who agreed not to claim the person as a dependent (Form 2120 can be used for this purpose) must be attached to the return of the person claiming the dependent [3.21].",
+    "cited": [
+     "3.21"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.18",
+     "3.11",
+     "3.21"
+    ],
+    "calls": 1,
+    "tokens": 3453,
+    "tools": [],
+    "ms": 3074,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m06",
+    "text": "If you are due a refund, you may get interest on it, with rates adjusted quarterly [1.51]. If the refund is made within 45 days after the due date of your return, no interest will be paid [1.51]. If you file your return after the due date (including extensions), no interest will be paid if the refund is made within 45 days after the date you filed [1.51]. If the refund isn’t made within this 45-day period, interest will be paid from the due date of the return or from the date you filed, whichever is later [1.51]. (If you receive a refund because of an amended return, interest is paid from the due date of your original return or the date you filed your original return, whichever is later, to the date you filed the amended return, or up to the payment date if the refund isn't made within 45 days after you file the amended return) [1.54].\n\nGenerally, you must file your claim for a credit or refund (amended return) within 3 years after the date you filed your original return or within 2 years after the date you paid the tax, whichever is later [1.54]. Returns filed before the due date (without regard to extensions) are considered filed on the due date [1.54]. These time periods are suspended while you are financially disabled [1.54].",
+    "cited": [
+     "1.51",
+     "1.54"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "1.51",
+     "1.54"
+    ],
+    "calls": 1,
+    "tokens": 3276,
+    "tools": [],
+    "ms": 3515,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m07",
+    "text": "If your child is age 17 or older at the end of 2025, you can see the Credit for Other Dependents (ODC) [14.5]. \n\nThe maximum amount you can claim for the ODC is $500 for each qualifying dependent, subject to limits [14.7].",
+    "cited": [
+     "14.5",
+     "14.7"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "14.4",
+     "14.7",
+     "14.5",
+     "14.12",
+     "14.1",
+     "14.8",
+     "14.11"
+    ],
+    "calls": 2,
+    "tokens": 5442,
+    "tools": [
+     {
+      "name": "search_publication",
+      "args": {
+       "query": "Credit for Other Dependents 17 or older"
+      }
+     }
+    ],
+    "ms": 4431,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m08",
+    "text": "You are eligible to file your 2025 return as a qualifying surviving spouse if you meet all of the following tests:\n- You were entitled to file a joint return with your spouse for the year your spouse died (it doesn't matter whether you actually filed a joint return) [2.14].\n- Your spouse died in 2023 or 2024 and you didn't remarry before the end of 2025 [2.14].\n- You have a child or stepchild (not a foster child) whom you can claim as a dependent or could claim as a dependent except that, for 2025, the child had gross income of $5,200 or more, filed a joint return, or could be claimed as a dependent on someone else's return [2.14].\n- This child lived in your home all year, except for temporary absences, with certain exceptions for birth, death, adoption, or kidnapping [2.14].\n- You paid more than half of the cost of keeping up a home for the year [2.14].\n\nTo figure whether you paid more than half of the cost of keeping up a home, you can determine it by using Worksheet 2-1 (Cost of Keeping Up a Home) [2.12]:\n- **Costs you include:** Rent, mortgage interest, real estate taxes, insurance on the home, repairs, utilities, and food eaten in the home [2.12].\n- **Costs you don’t include:** Clothing, education, medical treatment, vacations, life insurance, transportation, or the value of your services or those of a member of your household [2.12].\n\nIf the total amount you paid is more than the amount others paid, you meet the requirement of paying more than half of the cost of keeping up the home [2.12].",
+    "cited": [
+     "2.14",
+     "2.12"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "2.12",
+     "2.14",
+     "2.10",
+     "2.13"
+    ],
+    "calls": 1,
+    "tokens": 3296,
+    "tools": [],
+    "ms": 2561,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m09",
+    "text": "If you had to repay an amount that you included in your income in an earlier year, you may be able to deduct the amount repaid from your income for the year in which you repaid it, or—if the amount repaid is more than $3,000—you may be able to take a credit against your tax for the year in which you repaid it [8.15]. \n\nGenerally, you can claim a deduction or credit only if the repayment qualifies as an expense or loss incurred in your trade or business or in a for-profit transaction [8.15]. The type of deduction you are allowed depends on the type of income you included in the earlier year (such as a business expense on Schedule C or F, a capital loss on Schedule D, or as an other itemized deduction if it was wages, unemployment compensation, or other nonbusiness income over $3,000) [8.15]. Beginning in 2018, miscellaneous itemized deductions can no longer be claimed, so if the amount repaid was $3,000 or less and was previously reported as nonbusiness income, you are not able to deduct it [8.15]. If the amount repaid was more than $3,000 and included under a claim of right, you can choose between taking an other itemized deduction on Schedule A (Form 1040), line 16, or taking a credit, by figuring your tax under both methods and using the one that results in less tax [8.15].",
+    "cited": [
+     "8.15"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "12.19",
+     "8.15",
+     "12.60",
+     "11.5"
+    ],
+    "calls": 1,
+    "tokens": 2331,
+    "tools": [],
+    "ms": 6394,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": false,
+    "found_expected": true
+   },
+   {
+    "id": "m10",
+    "text": "To claim exemption from withholding for 2026, both of the following situations must apply:\n- For 2025, you had a right to a refund of all federal income tax withheld because you had no tax liability [4.12].\n- For 2026, you expect a refund of all federal income tax withheld because you expect to have no tax liability [4.12].\n\nTo claim exemption, you must give your employer a Form W-4 by writing \"Exempt\" on the form in the space below Step 4(c) and completing the applicable steps of the form [4.12]. \n\nAn exemption is good for only 1 year [4.12]. You must generally give your employer a new Form W-4 by February 15 each year to continue your exemption [4.12].",
+    "cited": [
+     "4.12"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "4.24",
+     "4.12",
+     "4.11",
+     "4.10"
+    ],
+    "calls": 1,
+    "tokens": 2273,
+    "tools": [],
+    "ms": 4281,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m11",
+    "text": "Amounts that must be distributed during a particular year under the required minimum distribution rules aren't eligible for rollover treatment [9.19]. \n\nAs an owner of a traditional IRA, you must generally start receiving distributions by April 1 of the year following the year in which you reach age 73 (referred to as the \"applicable required beginning date\") [9.25].",
+    "cited": [
+     "9.19",
+     "9.25"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "9.25",
+     "9.19",
+     "9.20",
+     "9.18"
+    ],
+    "calls": 1,
+    "tokens": 3384,
+    "tools": [],
+    "ms": 6309,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m12",
+    "text": "If you apply for an ITIN on or before the due date of your 2025 return (including extensions) and the IRS issues you an ITIN as a result of the application, the IRS will consider your ITIN as issued on or before the due date of your return [14.2]. However, if you or your spouse (if filing jointly) don’t have an SSN or ITIN issued on or before the due date of your 2025 return (including extensions), you can’t claim the ODC on either your original or amended 2025 tax return [14.2].",
+    "cited": [
+     "14.2"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "14.9",
+     "14.2",
+     "3.23",
+     "1.28"
+    ],
+    "calls": 1,
+    "tokens": 2243,
+    "tools": [],
+    "ms": 5947,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "m13",
+    "text": "For a decedent's final tax return, the standard deduction is the same as it would have been had the decedent continued to live [10.2]. However, if the decedent wasn't 65 or older at the time of death, the higher standard deduction for age can't be claimed [10.2]. \n\nFor a single taxpayer who is not 65 or older and not blind (born after January 1, 1961), and assuming no one else can claim them as a dependent, the standard deduction is $15,750 [10.10 (Table 10-1)].",
+    "cited": [
+     "10.2"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "10.3",
+     "10.2",
+     "10.5",
+     "10.10"
+    ],
+    "calls": 1,
+    "tokens": 2577,
+    "tools": [],
+    "ms": 1248,
+    "kind": "multi-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h02",
+    "text": "If your qualifying child does not have the required SSN issued before the due date of your 2025 return (including extensions), you can't use the child to claim the Child Tax Credit (CTC) or Additional Child Tax Credit (ACTC) on either your original or amended 2025 tax return [14.6]. However, if your qualifying child doesn’t have the required SSN but has another type of TIN (such as an ITIN, SSN, or ATIN) issued on or before the due date of your 2025 return (including extensions), you may be able to claim the Credit for Other Dependents (ODC) for that child [14.2].",
+    "cited": [
+     "14.6",
+     "14.2"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "14.6",
+     "14.9",
+     "14.2",
+     "1.28"
+    ],
+    "calls": 1,
+    "tokens": 2461,
+    "tools": [],
+    "ms": 2925,
+    "kind": "hard-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h03",
+    "text": "To meet the gross income test for a qualifying relative, the person's gross income for the year must be less than $5,200 [3.17]. \n\nGross income is defined as all income in the form of money, property, and services that isn't exempt from tax [3.17]. Specifically:\n- For a manufacturing, merchandising, or mining business, gross income is total net sales minus the cost of goods sold, plus any miscellaneous business income [3.17].\n- Gross receipts from rental property are gross income, without deducting taxes, repairs, or other expenses [3.17].\n- Gross income includes a partner's share of the gross (not net) partnership income [3.17].\n- Gross income also includes all taxable unemployment compensation, taxable social security benefits, and certain amounts received as scholarship and fellowship grants (excluding those received by degree candidates and used for required tuition, fees, supplies, books, and equipment) [3.17].",
+    "cited": [
+     "3.17"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.14",
+     "2.13",
+     "3.18",
+     "14.10",
+     "3.15",
+     "3.16",
+     "3.17"
+    ],
+    "calls": 2,
+    "tokens": 7755,
+    "tools": [
+     {
+      "name": "search_publication",
+      "args": {
+       "query": "qualifying relative gross income test aunt limit"
+      }
+     }
+    ],
+    "ms": 12599,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h04",
+    "text": "Estimated tax is the method used to pay tax on income that isn’t subject to withholding, which includes income from self-employment [4.23]. \n\nYou don’t have to pay estimated tax for 2026 if you meet all three of the following conditions:\n- You had no tax liability for 2025 (your total tax was zero or you didn’t have to file an income tax return).\n- You were a U.S. citizen or resident alien for the whole year.\n- Your 2025 tax year covered a 12-month period [4.24].\n\nYou also don’t have to pay estimated tax if you will pay enough through withholding to keep the amount you owe with your return under $1,000 [4.30].\n\nYou don’t have to make estimated tax payments until you have income on which you will owe income tax [4.28]. Depending on when you first have income on which you must pay estimated tax, the general due dates for installment payments are:\n- **Before April 1:** Make installments by April 15, June 15, September 15, and January 15 of the next year [4.28].\n- **April 1–May 31:** Make installments by June 15, September 15, and January 15 of the next year [4.28].\n- **June 1–August 31:** Make installments by September 15 and January 15 of the next year [4.28].\n- **After August 31:** Make the payment by January 15 of the next year [4.28].",
+    "cited": [
+     "4.23",
+     "4.24",
+     "4.30",
+     "4.28"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "4.28",
+     "4.23",
+     "4.30",
+     "4.24",
+     "4.29"
+    ],
+    "calls": 1,
+    "tokens": 2344,
+    "tools": [],
+    "ms": 13838,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h05",
+    "text": "If the total amount shown in box 5 of all your Forms SSA-1099 and RRB-1099 is a negative figure (meaning the total benefits you repaid are more than the gross benefits you received), you may be able to deduct part of this negative figure that represents benefits you included in gross income in an earlier year [7.7]. \n\n- If the figure is $3,000 or less, it is a miscellaneous itemized deduction and you can no longer deduct it [7.7].\n- If the deduction is more than $3,000, you can either take an itemized deduction on Schedule A (Form 1040), line 16, or claim a credit, depending on which method results in less tax [7.7].",
+    "cited": [
+     "7.7"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "8.15",
+     "7.6",
+     "12.20",
+     "12.19",
+     "7.7"
+    ],
+    "calls": 2,
+    "tokens": 6039,
+    "tools": [
+     {
+      "name": "search_publication",
+      "args": {
+       "query": "Repayment of benefits social security"
+      }
+     }
+    ],
+    "ms": 5600,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h06",
+    "text": "To meet the gross income test for a qualifying relative, a person's gross income for the year must be less than $5,200 [3.17]. For the purposes of the gross income test, the gross income of an individual who is permanently and totally disabled at any time during the year does not include income for services the individual performs at a sheltered workshop [3.17]. The publication states that \"permanently and totally disabled\" has the same meaning here as under Qualifying Child [3.17].",
+    "cited": [
+     "3.17"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "3.17",
+     "1.10",
+     "3.11",
+     "2.13",
+     "8.19"
+    ],
+    "calls": 1,
+    "tokens": 3270,
+    "tools": [],
+    "ms": 6127,
+    "kind": "hard-hop",
+    "fact": false,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "h07",
+    "text": "Yes. You have no income from the canceled debt if it’s intended as a gift to you [8.3]. Additionally, you do not include a canceled debt in your gross income in the following situations:\n- The debt is canceled in a bankruptcy case under title 11 of the U.S. Code [8.4].\n- The debt is canceled when you’re insolvent (though you can’t exclude any amount of canceled debt that is more than the amount by which you’re insolvent) [8.4].",
+    "cited": [
+     "8.3",
+     "8.4"
+    ],
+    "dropped": [],
+    "refused": false,
+    "seen": [
+     "8.3",
+     "1.56",
+     "1.39",
+     "6.4",
+     "4.44",
+     "8.4"
+    ],
+    "calls": 2,
+    "tokens": 7726,
+    "tools": [
+     {
+      "name": "search_publication",
+      "args": {
+       "query": "canceled debt exceptions"
+      }
+     }
+    ],
+    "ms": 27207,
+    "kind": "hard-hop",
+    "fact": true,
+    "refusal_right": true,
+    "cites_expected": true,
+    "found_expected": true
+   },
+   {
+    "id": "o01",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "4.40",
+     "8.2",
+     "4.50",
+     "1.19",
+     "6.11"
+    ],
+    "calls": 2,
+    "tokens": 5987,
+    "tools": [
+     {
+      "name": "search_publication",
+      "args": {
+       "query": "long-term capital gains tax rate 2025"
+      }
+     }
+    ],
+    "ms": 8063,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o02",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "12.60",
+     "9.8",
+     "8.12",
+     "12.19",
+     "11.9",
+     "9.12",
+     "9.14"
+    ],
+    "calls": 2,
+    "tokens": 7285,
+    "tools": [
+     {
+      "name": "search_publication",
+      "args": {
+       "query": "home mortgage interest deduct limit"
+      }
+     }
+    ],
+    "ms": 7359,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o03",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "14.4",
+     "14.7",
+     "3.13",
+     "14.1",
+     "3.19",
+     "3.15"
+    ],
+    "calls": 2,
+    "tokens": 5656,
+    "tools": [
+     {
+      "name": "search_publication",
+      "args": {
+       "query": "earned income credit amount two children"
+      }
+     }
+    ],
+    "ms": 2142,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o04",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "11.4",
+     "11.8",
+     "11.7",
+     "1.3"
+    ],
+    "calls": 1,
+    "tokens": 2586,
+    "tools": [],
+    "ms": 1040,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o05",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "10.3",
+     "10.2",
+     "10.10",
+     "10.7"
+    ],
+    "calls": 2,
+    "tokens": 6635,
+    "tools": [
+     {
+      "name": "search_publication",
+      "args": {
+       "query": "2022 standard deduction"
+      }
+     }
+    ],
+    "ms": 7262,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o06",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "12.60",
+     "12.33",
+     "12.5",
+     "12.6",
+     "12.59",
+     "12.26",
+     "3.19",
+     "5.24",
+     "12.43",
+     "8.19"
+    ],
+    "calls": 3,
+    "tokens": 9076,
+    "tools": [
+     {
+      "name": "search_publication",
+      "args": {
+       "query": "medical expenses"
+      }
+     },
+     {
+      "name": "search_publication",
+      "args": {
+       "query": "medical dental expenses"
+      }
+     }
+    ],
+    "ms": 16509,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o07",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "8.14",
+     "11.12",
+     "11.9",
+     "11.8",
+     "12.55",
+     "12.21",
+     "8.16"
+    ],
+    "calls": 3,
+    "tokens": 11309,
+    "tools": [
+     {
+      "name": "search_publication",
+      "args": {
+       "query": "depreciate a rental property"
+      }
+     },
+     {
+      "name": "search_publication",
+      "args": {
+       "query": "rental property depreciate"
+      }
+     }
+    ],
+    "ms": 22661,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o08",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "8.11",
+     "11.1",
+     "6.2",
+     "4.25",
+     "14.10"
+    ],
+    "calls": 1,
+    "tokens": 2392,
+    "tools": [],
+    "ms": 4670,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o09",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "1.3",
+     "1.12",
+     "1.5",
+     "1.2",
+     "13.5"
+    ],
+    "calls": 1,
+    "tokens": 2145,
+    "tools": [],
+    "ms": 3990,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o10",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "12.5",
+     "4.50",
+     "8.4",
+     "10.3",
+     "9.6",
+     "6.5",
+     "8.5",
+     "8.19",
+     "8.3"
+    ],
+    "calls": 2,
+    "tokens": 7408,
+    "tools": [
+     {
+      "name": "search_publication",
+      "args": {
+       "query": "gift tax exclusion"
+      }
+     }
+    ],
+    "ms": 2383,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   },
+   {
+    "id": "o11",
+    "text": "I couldn't find this in IRS Publication 17 (2025).",
+    "cited": [],
+    "dropped": [],
+    "refused": true,
+    "seen": [
+     "5.16",
+     "9.8",
+     "5.20",
+     "12.60",
+     "8.5",
+     "5.9",
+     "10.6"
+    ],
+    "calls": 2,
+    "tokens": 5562,
+    "tools": [
+     {
+      "name": "search_publication",
+      "args": {
+       "query": "charitable contributions church deduction Publication 17"
+      }
+     }
+    ],
+    "ms": 11030,
+    "kind": "out-of-scope",
+    "fact": null,
+    "refusal_right": true,
+    "cites_expected": null,
+    "found_expected": null
+   }
+  ]
+ }
+}
